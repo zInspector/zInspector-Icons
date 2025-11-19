@@ -13,7 +13,7 @@ npm install git+https://github.com/zInspector/zInspector-Icons.git
 
 #### Using yarn
 ```bash
-yarn add git+https://github.com/zInspector/zInspector-Icons.git
+yarn add zinspector-icons@github:zInspector/zInspector-Icons
 ```
 
 ### Required Dependencies
@@ -41,27 +41,51 @@ yarn add phosphor-react react react-dom
 cd ios && pod install
 ```
 
+### Important: Installation & Import Differences
+
+#### With npm
+```bash
+# Installation
+npm install git+https://github.com/zInspector/zInspector-Icons.git
+
+# Import (package name from package.json)
+import { Icon } from "zInspector-Icons/react-web";      // Dashboard
+import { Icon } from "zInspector-Icons/react-native";   // React Native
+```
+
+#### With yarn
+```bash
+# Installation (requires explicit package name)
+yarn add zinspector-icons@github:zInspector/zInspector-Icons
+
+# Import (yarn normalizes to lowercase-hyphenated)
+import { Icon } from "zinspector-icons/react-web";      // Dashboard
+import { Icon } from "zinspector-icons/react-native";   // React Native
+```
+
+> **Note**: Yarn requires the `package-name@github:owner/repo` format and normalizes the package name to `zinspector-icons`.
+
 ### Quick Setup Examples
 
 #### Dashboard Project with Yarn
 ```bash
 # In your dashboard project directory
-yarn add git+https://github.com/zInspector/zInspector-Icons.git
+yarn add zinspector-icons@github:zInspector/zInspector-Icons
 yarn add phosphor-react react react-dom
 
 # Start using immediately
-import { Icon } from "zInspector-Icons/react-web";
+import { Icon } from "zinspector-icons/react-web";
 ```
 
 #### React Native Project with Yarn
 ```bash
 # In your React Native project directory
-yarn add git+https://github.com/zInspector/zInspector-Icons.git
+yarn add zinspector-icons@github:zInspector/zInspector-Icons
 yarn add phosphor-react-native react-native-svg
 cd ios && pod install  # iOS only
 
 # Start using immediately
-import { Icon } from "zInspector-Icons/react-native";
+import { Icon } from "zinspector-icons/react-native";
 ```
 
 ## Usage
@@ -71,7 +95,10 @@ import { Icon } from "zInspector-Icons/react-native";
 ```tsx
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+// With npm
 import { Icon } from "zInspector-Icons/react-native";
+// With yarn
+// import { Icon } from "zinspector-icons/react-native";
 
 export default function MyScreen() {
   return (
@@ -102,8 +129,10 @@ const styles = StyleSheet.create({
 
 ```tsx
 import React from 'react';
+// With npm
 import { Icon } from "zInspector-Icons/react-web";
-// or import { Icon } from "zInspector-Icons"; // default export
+// With yarn  
+// import { Icon } from "zinspector-icons/react-web";
 
 export default function DashboardComponent() {
   return (
@@ -347,10 +376,10 @@ import { Icon } from "zInspector-Icons/react-web-only";
 
 ```tsx
 // React Native
-import { Icon } from "zInspector-Icons/react-native";
+import { Icon } from "zinspector-icons/react-native";
 
 // Web Dashboard  
-import { Icon } from "zInspector-Icons/react-web";
+import { Icon } from "zinspector-icons/react-web";
 
 // Basic usage
 <Icon name="House" size={24} />
@@ -545,12 +574,20 @@ yarn build
 #### 7. Use Your Custom Icon
 
 ```tsx
-// React Native
+// React Native (npm)
 import { Icon } from "zInspector-Icons/react-native";
 <Icon name="ZInspectorLogo" size={32} color="#007AFF" weight="bold" />
 
-// Web Dashboard
+// React Native (yarn)
+import { Icon } from "zinspector-icons/react-native";
+<Icon name="ZInspectorLogo" size={32} color="#007AFF" weight="bold" />
+
+// Web Dashboard (npm)
 import { Icon } from "zInspector-Icons/react-web";
+<Icon name="ZInspectorLogo" size={24} color="#333" />
+
+// Web Dashboard (yarn)
+import { Icon } from "zinspector-icons/react-web";
 <Icon name="ZInspectorLogo" size={24} color="#333" />
 ```
 
@@ -705,10 +742,17 @@ src/
 
 ## Available Exports
 
+### With npm
 - `zInspector-Icons/react-native` - For React Native apps
 - `zInspector-Icons/react-web` - For web dashboard (default)
 - `zInspector-Icons/react-web-only` - For web-only pure SVG
 - `zInspector-Icons/svg` - For raw SVG strings
+
+### With yarn
+- `zinspector-icons/react-native` - For React Native apps
+- `zinspector-icons/react-web` - For web dashboard (default)
+- `zinspector-icons/react-web-only` - For web-only pure SVG
+- `zinspector-icons/svg` - For raw SVG strings
 
 ## Repository
 

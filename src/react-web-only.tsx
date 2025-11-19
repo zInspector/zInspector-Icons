@@ -30,12 +30,14 @@ const MyCustomIconWeb: React.FC<IconProps> = ({
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeLinejoin="round"
+        fill="none"
       />
       <path
         d="M128 152v80"
         stroke={color}
         strokeWidth={strokeWidth}
         strokeLinecap="round"
+        fill="none"
       />
     </svg>
   );

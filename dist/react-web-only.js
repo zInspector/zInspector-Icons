@@ -46,7 +46,8 @@ var MyCustomIconWeb = ({
             stroke: color,
             strokeWidth,
             strokeLinecap: "round",
-            strokeLinejoin: "round"
+            strokeLinejoin: "round",
+            fill: "none"
           }
         ),
         /* @__PURE__ */ jsx2(
@@ -55,7 +56,8 @@ var MyCustomIconWeb = ({
             d: "M128 152v80",
             stroke: color,
             strokeWidth,
-            strokeLinecap: "round"
+            strokeLinecap: "round",
+            fill: "none"
           }
         )
       ]

@@ -721,10 +721,26 @@ dist/
 ├── react-web-only.js
 ├── react-web-only.cjs
 ├── react-web-only.d.ts
-└── ... (other modules)
+└── ... (other modules + source maps)
 ```
 
-> **Important**: Always run `npm run build` after making changes before testing or publishing.
+### Important Notes
+
+> **📦 Compiled files are included in Git**: Unlike typical applications, this library ships the `dist/` folder in the repository. This ensures users get pre-compiled JavaScript when installing from GitHub, preventing "Unexpected token" errors in Next.js and other frameworks.
+
+> **🔧 Always build after changes**: Run `npm run build` after making changes before testing or publishing. The compiled files in `dist/` must be kept in sync with source code.
+
+### Why We Include dist/ in Git
+
+**For Libraries (this repo)**: ✅ Include `dist/` 
+- Users get compiled JS immediately
+- No build step required for consumers  
+- Works with Next.js, Vite, etc. out of the box
+
+**For Applications**: ❌ Exclude `dist/`
+- Build on deployment
+- Keeps repo clean
+- CI/CD handles building
 
 ## Project Structure
 

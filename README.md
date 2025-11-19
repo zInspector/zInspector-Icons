@@ -342,19 +342,112 @@ Examples: `House`, `Heart`, `Star`, `User`, `Bell`, `Settings`, `Search`, etc.
 
 ## Adding Custom Icons
 
-1. Create a new `.tsx` file in `src/custom/` following the `MyCustomIcon.tsx` pattern
-2. Use `react-native-svg` components (`Svg`, `Path`, `Circle`, etc.)
-3. Support the `IconProps` interface (size, color, weight)
-4. Export from `src/react-native.tsx`
-5. Rebuild with `npm run build`
+### Step-by-Step Guide
 
-Example custom icon:
+#### 1. Create the Icon Component
+
+Create a new `.tsx` file in `src/custom/` directory. Name it descriptively (e.g., `ZInspectorLogo.tsx`):
+
 ```tsx
+// src/custom/ZInspectorLogo.tsx
 import React from "react";
 import type { IconProps } from "../types";
-import Svg, { Path } from "react-native-svg";
+import Svg, { Path, Circle, Rect } from "react-native-svg";
 
-export const MyNewIcon: React.FC<IconProps> = ({
+export const ZInspectorLogo: React.FC<IconProps> = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  // Map weight to stroke width
+  const strokeWidth = 
+    weight === "thin" ? 1 :
+    weight === "light" ? 1.5 :
+    weight === "bold" ? 3 :
+    weight === "fill" ? 0 : // No stroke for filled icons
+    2; // regular
+
+  // For filled icons, use fill instead of stroke
+  const iconProps = weight === "fill" 
+    ? { fill: color, stroke: "none" }
+    : { stroke: color, strokeWidth, fill: "none" };
+
+  return (
+    <Svg
+      width={size}
+      height={size}
+      viewBox="0 0 256 256"
+      fill="none"
+    >
+      {/* Your custom SVG paths here */}
+      <Path
+        d="M128 32L224 128L128 224L32 128L128 32z"
+        {...iconProps}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Circle
+        cx="128"
+        cy="128"
+        r="32"
+        {...iconProps}
+      />
+    </Svg>
+  );
+};
+```
+
+#### 2. Export from React Native Module
+
+Add your icon to `src/react-native.tsx`:
+
+```tsx
+// src/react-native.tsx
+import React from "react";
+import * as PhosphorNative from "phosphor-react-native";
+import type { IconProps } from "./types";
+import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
+
+import { MyCustomIcon } from "./custom/MyCustomIcon";
+import { ZInspectorLogo } from "./custom/ZInspectorLogo"; // Add this line
+
+const customIcons: Record<string, React.ComponentType<IconProps>> = {
+  MyCustomIcon,
+  ZInspectorLogo // Add this line
+};
+
+// ...rest of the file
+```
+
+#### 3. Export from Web Module
+
+Add your icon to `src/react-web.tsx`:
+
+```tsx
+// src/react-web.tsx
+import React from "react";
+import * as Phosphor from "phosphor-react";
+import type { IconProps } from "./types";
+import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
+
+import { MyCustomIcon } from "./custom/MyCustomIcon";
+import { ZInspectorLogo } from "./custom/ZInspectorLogo"; // Add this line
+
+const customIcons: Record<string, React.ComponentType<IconProps>> = {
+  MyCustomIcon,
+  ZInspectorLogo // Add this line
+};
+
+// ...rest of the file
+```
+
+#### 4. Create Web-Only Version (Optional)
+
+If you need a web-only version with pure HTML SVG, add to `src/react-web-only.tsx`:
+
+```tsx
+// Add to src/react-web-only.tsx
+const ZInspectorLogoWeb: React.FC<IconProps> = ({
   size = 24,
   color = "currentColor",
   weight = "regular"
@@ -362,9 +455,138 @@ export const MyNewIcon: React.FC<IconProps> = ({
   const strokeWidth = weight === "bold" ? 3 : weight === "light" ? 1.5 : 2;
   
   return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 256 256"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M128 32L224 128L128 224L32 128L128 32z"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+// Add to customIcons object
+const customIcons: Record<string, React.ComponentType<IconProps>> = {
+  MyCustomIcon: MyCustomIconWeb,
+  ZInspectorLogo: ZInspectorLogoWeb, // Add this line
+};
+```
+
+#### 5. Add SVG String Export (Optional)
+
+For raw SVG usage, add to `src/svg.ts`:
+
+```tsx
+// src/svg.ts
+const customIconSvgs: Record<string, string> = {
+  MyCustomIcon: `<svg viewBox="0 0 256 256" fill="none">...</svg>`,
+  ZInspectorLogo: `<svg viewBox="0 0 256 256" fill="none">
+    <path d="M128 32L224 128L128 224L32 128L128 32z" stroke="currentColor" stroke-width="2"/>
+  </svg>`, // Add this line
+};
+```
+
+#### 6. Build the Library
+
+```bash
+npm run build
+```
+
+#### 7. Use Your Custom Icon
+
+```tsx
+// React Native
+import { Icon } from "zInspector-Icons/react-native";
+<Icon name="ZInspectorLogo" size={32} color="#007AFF" weight="bold" />
+
+// Web Dashboard
+import { Icon } from "zInspector-Icons/react-web";
+<Icon name="ZInspectorLogo" size={24} color="#333" />
+```
+
+### Icon Creation Tips
+
+#### Best Practices
+- **Use consistent viewBox**: Always use `viewBox="0 0 256 256"` to match Phosphor icons
+- **Support all weights**: Implement `thin`, `light`, `regular`, `bold`, and `fill` weights
+- **Use semantic naming**: Choose descriptive names like `ZInspectorLogo`, `CompanyIcon`
+- **Optimize paths**: Use simple, clean SVG paths for better performance
+
+#### Weight Implementation
+```tsx
+// Stroke-based icons
+const strokeWidth = 
+  weight === "thin" ? 1 :
+  weight === "light" ? 1.5 :
+  weight === "bold" ? 3 :
+  2; // regular
+
+// Handle fill weight
+if (weight === "fill") {
+  return <Path d="..." fill={color} stroke="none" />;
+}
+
+return <Path d="..." stroke={color} strokeWidth={strokeWidth} fill="none" />;
+```
+
+#### SVG Components Available
+- `Path` - For complex shapes
+- `Circle` - For circular elements  
+- `Rect` - For rectangular shapes
+- `Line` - For straight lines
+- `Polyline` - For connected lines
+- `Polygon` - For closed shapes
+- `Ellipse` - For oval shapes
+
+### Example: Complete Custom Icon
+
+```tsx
+// src/custom/NotificationBell.tsx
+import React from "react";
+import type { IconProps } from "../types";
+import Svg, { Path } from "react-native-svg";
+
+export const NotificationBell: React.FC<IconProps> = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = 
+    weight === "thin" ? 1 :
+    weight === "light" ? 1.5 :
+    weight === "bold" ? 3 :
+    2;
+
+  if (weight === "fill") {
+    return (
+      <Svg width={size} height={size} viewBox="0 0 256 256" fill="none">
+        <Path
+          d="M221.8 175.94C216.25 166.38 208 139.33 208 104a80 80 0 1 0-160 0c0 35.34-8.26 62.38-13.81 71.94A16 16 0 0 0 48 200h40.81a40 40 0 0 0 78.38 0H208a16 16 0 0 0 13.8-24.06ZM128 216a24 24 0 0 1-22.62-16h45.24A24 24 0 0 1 128 216Z"
+          fill={color}
+        />
+      </Svg>
+    );
+  }
+
+  return (
     <Svg width={size} height={size} viewBox="0 0 256 256" fill="none">
       <Path
-        d="M128 32L224 128L128 224L32 128L128 32z"
+        d="M96 192h64a32 32 0 0 1-64 0Z"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M56 104a72 72 0 0 1 144 0c0 35.82 8.3 64.6 14.9 76H41.1c6.6-11.4 14.9-40.18 14.9-76Z"
         stroke={color}
         strokeWidth={strokeWidth}
         strokeLinecap="round"

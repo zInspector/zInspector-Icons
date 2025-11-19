@@ -1,10 +1,8 @@
 import React from "react";
-import * as Phosphor from "phosphor-react";
-import type { IconProps } from "./types";
-import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
+import type { IconProps } from "../types";
+import Svg, { Path } from "react-native-svg";
 
-// Custom icon implementado solo para web (sin react-native-svg)
-const MyCustomIconWeb: React.FC<IconProps> = ({
+export const HomeArrowIcon: React.FC<IconProps> = ({
   size = 24,
   color = "currentColor",
   weight = "regular"
@@ -15,80 +13,35 @@ const MyCustomIconWeb: React.FC<IconProps> = ({
     weight === "bold" ? 24 :
     16; // default regular
 
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 256 256"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Ejemplo: un arbolito genérico */}
-      <path
-        d="M128 24L56 152h144L128 24z"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      <path
-        d="M128 152v80"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        fill="none"
-      />
-    </svg>
-  );
-};
-
-// Home with arrow icon for web
-const HomeArrowIconWeb: React.FC<IconProps> = ({
-  size = 24,
-  color = "currentColor",
-  weight = "regular"
-}) => {
-  const strokeWidth =
-    weight === "thin" ? 8 :
-    weight === "light" ? 12 :
-    weight === "bold" ? 24 :
-    16; // default regular
-
-  // For filled icons, we don't use stroke but fill
-  const isFilled = weight === "fill";
-
-  if (isFilled) {
+  if (weight === "fill") {
     return (
-      <svg
+      <Svg
         width={size}
         height={size}
         viewBox="0 0 256 256"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
+        <Path
           d="M252.245 119.125L185.245 46.9312C182.927 44.2812 179.682 42.6667 176.267 42.6667C172.851 42.6667 169.606 44.2812 167.288 46.9312L100.288 119.125C99.5308 119.979 98.916 121.062 98.4734 122.229C98.0308 123.396 97.9934 124.604 98.0001 125.813V217.771C98.0001 219.396 98.7027 221.062 99.9547 222.271C101.207 223.479 102.892 224.25 104.667 224.25H156.667C158.442 224.25 160.127 223.479 161.379 222.271C162.631 221.062 163.333 219.396 163.333 217.771V166.062H189.333V217.771C189.333 219.396 190.036 221.062 191.288 222.271C192.54 223.479 194.225 224.25 196 224.25H250.667C252.442 224.25 254.127 223.479 255.379 222.271C256.631 221.062 257.333 219.396 257.333 217.771V125.813C257.34 124.604 257.302 123.396 256.86 122.229C256.417 121.062 255.802 119.979 252.245 119.125Z"
           fill={color}
         />
-        <path
+        <Path
           d="M90.294 133.458C93.560 129.958 93.560 124.042 90.294 120.542L46.144 76.3917C42.877 73.1458 36.960 73.1458 33.694 76.3917C30.427 79.6375 30.427 85.5542 33.694 88.8L70.587 128L33.694 167.2C30.427 170.446 30.427 176.362 33.694 179.608C36.960 182.854 42.877 182.854 46.144 179.608L90.294 133.458ZM0 128L60.746 138.833L85.333 138.833V128V121.167L-60.746 121.167L0 128Z"
           fill={color}
         />
-      </svg>
+      </Svg>
     );
   }
 
   return (
-    <svg
+    <Svg
       width={size}
       height={size}
       viewBox="0 0 256 256"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
       {/* House outline */}
-      <path
+      <Path
         d="M243.333 210.562H202.667V158.854C202.667 157.229 201.965 155.667 200.712 154.479C199.460 153.292 197.775 152.542 196 152.542H156.667C154.892 152.542 153.207 153.292 151.955 154.479C150.702 155.667 150 157.229 150 158.854V210.562H109.333V130.146L176.267 57.146L243.333 130.146V210.562Z"
         stroke={color}
         strokeWidth={strokeWidth}
@@ -97,7 +50,7 @@ const HomeArrowIconWeb: React.FC<IconProps> = ({
         fill="none"
       />
       {/* Arrow pointing to house */}
-      <path
+      <Path
         d="M90.294 133.458L46.144 179.608C42.877 182.854 36.960 182.854 33.694 179.608C30.427 176.362 30.427 170.446 33.694 167.2L70.587 128L33.694 88.8C30.427 85.554 30.427 79.638 33.694 76.392C36.960 73.146 42.877 73.146 46.144 76.392L90.294 120.542C93.560 124.042 93.560 129.958 90.294 133.458Z"
         stroke={color}
         strokeWidth={strokeWidth}
@@ -105,30 +58,13 @@ const HomeArrowIconWeb: React.FC<IconProps> = ({
         strokeLinejoin="round"
         fill="none"
       />
-      <path
+      <Path
         d="M0 128H85.333"
         stroke={color}
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         fill="none"
       />
-    </svg>
+    </Svg>
   );
 };
-
-const customIcons: Record<string, React.ComponentType<IconProps>> = {
-  MyCustomIcon: MyCustomIconWeb,
-  HomeArrowIcon: HomeArrowIconWeb
-};
-
-// Filtrar solo los componentes de iconos, excluyendo IconContext
-const { IconContext, ...phosphorIcons } = Phosphor;
-
-const iconPack: IconPackType = {
-  ...phosphorIcons,
-  ...customIcons
-};
-
-export const Icon = createIconComponent(iconPack);
-export type { IconProps } from "./types";
-export { iconPack }; // por si querés inspeccionar o listar iconos

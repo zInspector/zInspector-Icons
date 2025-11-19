@@ -9,17 +9,26 @@ Private icon library for zInspector React Native apps. Includes Phosphor icons +
 npm install git+https://github.com/zInspector/zInspector-Icons.git
 ```
 
-### Required Dependencies for React Native
+### Required Dependencies
+
+#### For React Native
 ```bash
 npm install phosphor-react-native react-native-svg
 ```
 
-### iOS Setup
+#### For Web Dashboard
+```bash
+npm install phosphor-react react react-dom
+```
+
+### iOS Setup (React Native only)
 ```bash
 cd ios && pod install
 ```
 
-## Usage in React Native
+## Usage
+
+### React Native App
 
 ```tsx
 import React from 'react';
@@ -51,9 +60,259 @@ const styles = StyleSheet.create({
 });
 ```
 
-### Simple Usage
+### Web Dashboard
+
 ```tsx
+import React from 'react';
+import { Icon } from "zInspector-Icons/react-web";
+// or import { Icon } from "zInspector-Icons"; // default export
+
+export default function DashboardComponent() {
+  return (
+    <div className="dashboard-container">
+      {/* Navigation icons */}
+      <nav className="sidebar">
+        <Icon name="House" size={20} color="#6c757d" />
+        <Icon name="Users" size={20} color="#6c757d" />
+        <Icon name="ChartBar" size={20} color="#6c757d" />
+        <Icon name="Settings" size={20} color="#6c757d" />
+      </nav>
+
+      {/* Header with notifications */}
+      <header className="header">
+        <Icon name="Bell" size={24} color="#007bff" />
+        <Icon name="User" size={24} color="#28a745" weight="fill" />
+      </header>
+
+      {/* Action buttons */}
+      <div className="actions">
+        <button className="btn btn-primary">
+          <Icon name="Plus" size={16} color="white" weight="bold" />
+          Add New
+        </button>
+        
+        <button className="btn btn-secondary">
+          <Icon name="Download" size={16} color="#6c757d" />
+          Export
+        </button>
+        
+        <button className="btn btn-danger">
+          <Icon name="Trash" size={16} color="white" weight="bold" />
+          Delete
+        </button>
+      </div>
+
+      {/* Status indicators */}
+      <div className="status-cards">
+        <div className="card">
+          <Icon name="TrendUp" size={32} color="#28a745" weight="bold" />
+          <span>Revenue Up</span>
+        </div>
+        
+        <div className="card">
+          <Icon name="Users" size={32} color="#007bff" weight="fill" />
+          <span>New Users</span>
+        </div>
+        
+        <div className="card">
+          <Icon name="ShoppingCart" size={32} color="#ffc107" weight="bold" />
+          <span>Orders</span>
+        </div>
+      </div>
+
+      {/* Custom icons */}
+      <div className="custom-section">
+        <Icon name="MyCustomIcon" size={48} color="#e74c3c" weight="bold" />
+      </div>
+    </div>
+  );
+}
+```
+
+#### Dashboard Usage Patterns
+
+```tsx
+// Table actions
+<td className="actions">
+  <Icon name="Eye" size={16} color="#007bff" /> {/* View */}
+  <Icon name="PencilSimple" size={16} color="#28a745" /> {/* Edit */}
+  <Icon name="Trash" size={16} color="#dc3545" /> {/* Delete */}
+</td>
+
+// Form inputs with icons
+<div className="input-group">
+  <Icon name="MagnifyingGlass" size={18} color="#6c757d" />
+  <input type="text" placeholder="Search..." />
+</div>
+
+<div className="input-group">
+  <Icon name="Envelope" size={18} color="#6c757d" />
+  <input type="email" placeholder="Email address" />
+</div>
+
+// Loading states
+<button disabled={loading}>
+  {loading ? (
+    <Icon name="CircleNotch" size={16} color="white" className="spinning" />
+  ) : (
+    <Icon name="FloppyDisk" size={16} color="white" />
+  )}
+  Save Changes
+</button>
+
+// Alerts and notifications
+<div className="alert alert-success">
+  <Icon name="CheckCircle" size={20} color="#28a745" weight="fill" />
+  Operation completed successfully!
+</div>
+
+<div className="alert alert-warning">
+  <Icon name="Warning" size={20} color="#ffc107" weight="fill" />
+  Please review your settings.
+</div>
+
+<div className="alert alert-error">
+  <Icon name="XCircle" size={20} color="#dc3545" weight="fill" />
+  Something went wrong.
+</div>
+```
+
+#### Common Dashboard Components
+
+```tsx
+// Data tables with icons
+function DataTable({ data }) {
+  return (
+    <table className="table">
+      <thead>
+        <tr>
+          <th>
+            <Icon name="User" size={16} color="#6c757d" />
+            Name
+          </th>
+          <th>
+            <Icon name="Envelope" size={16} color="#6c757d" />
+            Email
+          </th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row) => (
+          <tr key={row.id}>
+            <td>{row.name}</td>
+            <td>{row.email}</td>
+            <td>
+              <button className="btn-icon" title="View">
+                <Icon name="Eye" size={16} color="#007bff" />
+              </button>
+              <button className="btn-icon" title="Edit">
+                <Icon name="PencilSimple" size={16} color="#28a745" />
+              </button>
+              <button className="btn-icon" title="Delete">
+                <Icon name="Trash" size={16} color="#dc3545" />
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+// Sidebar navigation
+function Sidebar({ currentPage }) {
+  const menuItems = [
+    { id: 'dashboard', name: 'Dashboard', icon: 'House' },
+    { id: 'users', name: 'Users', icon: 'Users' },
+    { id: 'analytics', name: 'Analytics', icon: 'ChartBar' },
+    { id: 'settings', name: 'Settings', icon: 'Gear' },
+  ];
+
+  return (
+    <nav className="sidebar">
+      {menuItems.map((item) => (
+        <a
+          key={item.id}
+          href={`/${item.id}`}
+          className={`nav-item ${currentPage === item.id ? 'active' : ''}`}
+        >
+          <Icon 
+            name={item.icon} 
+            size={20} 
+            color={currentPage === item.id ? '#007bff' : '#6c757d'} 
+          />
+          {item.name}
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+// Status badges
+function StatusBadge({ status }) {
+  const statusConfig = {
+    active: { icon: 'CheckCircle', color: '#28a745' },
+    pending: { icon: 'Clock', color: '#ffc107' },
+    inactive: { icon: 'XCircle', color: '#dc3545' },
+  };
+
+  const config = statusConfig[status];
+  
+  return (
+    <span className={`badge badge-${status}`}>
+      <Icon name={config.icon} size={14} color={config.color} weight="fill" />
+      {status.charAt(0).toUpperCase() + status.slice(1)}
+    </span>
+  );
+}
+
+// Search and filters
+function SearchFilters({ onSearch, onFilter }) {
+  return (
+    <div className="search-filters">
+      <div className="search-box">
+        <Icon name="MagnifyingGlass" size={18} color="#6c757d" />
+        <input
+          type="text"
+          placeholder="Search users..."
+          onChange={(e) => onSearch(e.target.value)}
+        />
+      </div>
+      
+      <div className="filters">
+        <button className="filter-btn">
+          <Icon name="Funnel" size={16} color="#6c757d" />
+          Filter
+        </button>
+        
+        <button className="sort-btn">
+          <Icon name="ArrowsUpDown" size={16} color="#6c757d" />
+          Sort
+        </button>
+      </div>
+    </div>
+  );
+}
+```
+
+### Web Only (Pure SVG)
+For web-only components that need maximum performance:
+
+```tsx
+import { Icon } from "zInspector-Icons/react-web-only";
+
+<Icon name="MyCustomIcon" size={24} color="#007bff" />
+```
+
+### Simple Usage Examples
+
+```tsx
+// React Native
 import { Icon } from "zInspector-Icons/react-native";
+
+// Web Dashboard  
+import { Icon } from "zInspector-Icons/react-web";
 
 // Basic usage
 <Icon name="House" size={24} />
@@ -134,14 +393,54 @@ npm run build
 
 ```
 src/
-├── react-native.tsx    # React Native exports
-├── react-web.tsx       # Web React exports  
-├── svg.ts             # Raw SVG exports
+├── react-native.tsx    # React Native exports (uses react-native-svg)
+├── react-web.tsx       # Web Dashboard exports (uses phosphor-react)
+├── react-web-only.tsx  # Web-only pure SVG exports
+├── svg.ts             # Raw SVG string exports
 ├── types.ts           # TypeScript interfaces
 ├── IconFactory.tsx    # Icon component factory
 └── custom/            # Custom zInspector icons
     └── MyCustomIcon.tsx
 ```
+
+## Dashboard Icon Categories
+
+### Navigation & Layout
+- `House`, `Buildings`, `SquaresFour` - Home and sections
+- `List`, `Rows`, `Columns` - Layout options
+- `CaretLeft`, `CaretRight`, `CaretUp`, `CaretDown` - Navigation
+
+### Actions & Operations  
+- `Plus`, `Minus`, `X` - Basic actions
+- `PencilSimple`, `Trash`, `Copy`, `Download` - CRUD operations
+- `FloppyDisk`, `CloudArrowUp`, `Export` - Save/export actions
+
+### Data & Analytics
+- `ChartBar`, `ChartLine`, `ChartPie` - Charts
+- `TrendUp`, `TrendDown` - Trends
+- `Calendar`, `Clock`, `Timer` - Time-related
+
+### User & Social
+- `User`, `Users`, `UserCircle` - User management
+- `Heart`, `Star`, `ThumbsUp` - Engagement
+- `Bell`, `ChatCircle`, `Envelope` - Communication
+
+### Status & Alerts
+- `CheckCircle`, `XCircle`, `Warning` - Status indicators
+- `Info`, `Question`, `Exclamation` - Information states
+- `Eye`, `EyeSlash` - Visibility toggles
+
+### System & Settings
+- `Gear`, `Wrench`, `Sliders` - Settings
+- `Lock`, `Key`, `Shield` - Security
+- `Database`, `Server`, `Globe` - System resources
+
+## Available Exports
+
+- `zInspector-Icons/react-native` - For React Native apps
+- `zInspector-Icons/react-web` - For web dashboard (default)
+- `zInspector-Icons/react-web-only` - For web-only pure SVG
+- `zInspector-Icons/svg` - For raw SVG strings
 
 ## Repository
 

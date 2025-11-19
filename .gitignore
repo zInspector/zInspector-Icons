@@ -2,8 +2,8 @@
 node_modules/
 npm-debug.log*
 
-# Build outputs
-dist/
+# Build outputs (keep dist/ for library distribution)
+# dist/ - commented out because we need to ship compiled JS
 *.tsbuildinfo
 
 # IDE

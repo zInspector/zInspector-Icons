@@ -5,25 +5,63 @@ Private icon library for zInspector React Native apps. Includes Phosphor icons +
 ## Installation
 
 ### Install from GitHub
+
+#### Using npm
 ```bash
 npm install git+https://github.com/zInspector/zInspector-Icons.git
+```
+
+#### Using yarn
+```bash
+yarn add git+https://github.com/zInspector/zInspector-Icons.git
 ```
 
 ### Required Dependencies
 
 #### For React Native
 ```bash
+# Using npm
 npm install phosphor-react-native react-native-svg
+
+# Using yarn
+yarn add phosphor-react-native react-native-svg
 ```
 
 #### For Web Dashboard
 ```bash
+# Using npm
 npm install phosphor-react react react-dom
+
+# Using yarn
+yarn add phosphor-react react react-dom
 ```
 
 ### iOS Setup (React Native only)
 ```bash
 cd ios && pod install
+```
+
+### Quick Setup Examples
+
+#### Dashboard Project with Yarn
+```bash
+# In your dashboard project directory
+yarn add git+https://github.com/zInspector/zInspector-Icons.git
+yarn add phosphor-react react react-dom
+
+# Start using immediately
+import { Icon } from "zInspector-Icons/react-web";
+```
+
+#### React Native Project with Yarn
+```bash
+# In your React Native project directory
+yarn add git+https://github.com/zInspector/zInspector-Icons.git
+yarn add phosphor-react-native react-native-svg
+cd ios && pod install  # iOS only
+
+# Start using immediately
+import { Icon } from "zInspector-Icons/react-native";
 ```
 
 ## Usage
@@ -497,7 +535,11 @@ const customIconSvgs: Record<string, string> = {
 #### 6. Build the Library
 
 ```bash
+# Using npm
 npm run build
+
+# Using yarn
+yarn build
 ```
 
 #### 7. Use Your Custom Icon
@@ -606,9 +648,13 @@ cd zInspector-Icons
 
 # Install dependencies
 npm install
+# or
+yarn install
 
 # Build the library
 npm run build
+# or
+yarn build
 ```
 
 ## Project Structure

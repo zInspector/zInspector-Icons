@@ -8,10 +8,10 @@ export const MyCustomIcon: React.FC<IconProps> = ({
   weight = "regular"
 }) => {
   const strokeWidth =
-    weight === "thin" ? 1 :
-    weight === "light" ? 1.5 :
-    weight === "bold" ? 3 :
-    2; // default regular
+    weight === "thin" ? 8 :
+    weight === "light" ? 12 :
+    weight === "bold" ? 24 :
+    16; // default regular
 
   return (
     <Svg

@@ -678,6 +678,7 @@ export const NotificationBell: React.FC<IconProps> = ({
 
 ## Development
 
+### Setup
 ```bash
 # Clone the repository
 git clone https://github.com/zInspector/zInspector-Icons.git
@@ -687,12 +688,43 @@ cd zInspector-Icons
 npm install
 # or
 yarn install
+```
 
-# Build the library
+### Building the Library
+```bash
+# Build all modules (required before publishing/using)
 npm run build
 # or
 yarn build
+
+# Watch mode for development
+npm run build:watch
+# or  
+yarn build:watch
+
+# Clean build output
+npm run clean
+# or
+yarn clean
 ```
+
+### Build Output
+The build process generates:
+```
+dist/
+├── react-native.js         # ES modules
+├── react-native.cjs        # CommonJS  
+├── react-native.d.ts       # TypeScript declarations
+├── react-web.js
+├── react-web.cjs
+├── react-web.d.ts
+├── react-web-only.js
+├── react-web-only.cjs
+├── react-web-only.d.ts
+└── ... (other modules)
+```
+
+> **Important**: Always run `npm run build` after making changes before testing or publishing.
 
 ## Project Structure
 

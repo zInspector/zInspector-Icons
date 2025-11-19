@@ -16,33 +16,45 @@
   "types": "dist/react-web.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/react-web.d.ts",
       "import": "./dist/react-web.js",
-      "require": "./dist/react-web.js",
-      "types": "./dist/react-web.d.ts"
+      "require": "./dist/react-web.cjs"
     },
     "./react-web": {
+      "types": "./dist/react-web.d.ts",
       "import": "./dist/react-web.js",
-      "require": "./dist/react-web.js",
-      "types": "./dist/react-web.d.ts"
+      "require": "./dist/react-web.cjs"
     },
     "./react-native": {
+      "types": "./dist/react-native.d.ts",
       "import": "./dist/react-native.js",
-      "require": "./dist/react-native.js",
-      "types": "./dist/react-native.d.ts"
+      "require": "./dist/react-native.cjs"
     },
     "./svg": {
+      "types": "./dist/svg.d.ts",
       "import": "./dist/svg.js",
-      "require": "./dist/svg.js",
-      "types": "./dist/svg.d.ts"
+      "require": "./dist/svg.cjs"
     },
     "./react-web-only": {
+      "types": "./dist/react-web-only.d.ts",
       "import": "./dist/react-web-only.js",
-      "require": "./dist/react-web-only.js",
-      "types": "./dist/react-web-only.d.ts"
+      "require": "./dist/react-web-only.cjs"
+    },
+    "./svg-enhanced": {
+      "types": "./dist/svg-enhanced.d.ts",
+      "import": "./dist/svg-enhanced.js",
+      "require": "./dist/svg-enhanced.cjs"
+    },
+    "./svg-generator": {
+      "types": "./dist/svg-generator.d.ts",
+      "import": "./dist/svg-generator.js",
+      "require": "./dist/svg-generator.cjs"
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "clean": "rm -rf dist"
   },
   "peerDependencies": {
     "phosphor-react": ">=2",
@@ -61,6 +73,7 @@
     "react-dom": "^19.2.0",
     "react-native": "^0.82.1",
     "react-native-svg": "^15.15.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.6.0"
   },
   "license": "MIT"

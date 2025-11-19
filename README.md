@@ -428,11 +428,11 @@ export const ZInspectorLogo: React.FC<IconProps> = ({
 }) => {
   // Map weight to stroke width
   const strokeWidth = 
-    weight === "thin" ? 1 :
-    weight === "light" ? 1.5 :
-    weight === "bold" ? 3 :
+    weight === "thin" ? 8 :
+    weight === "light" ? 12 :
+    weight === "bold" ? 24 :
     weight === "fill" ? 0 : // No stroke for filled icons
-    2; // regular
+    16; // regular
 
   // For filled icons, use fill instead of stroke
   const iconProps = weight === "fill" 
@@ -603,10 +603,10 @@ import { Icon } from "zinspector-icons/react-web";
 ```tsx
 // Stroke-based icons
 const strokeWidth = 
-  weight === "thin" ? 1 :
-  weight === "light" ? 1.5 :
-  weight === "bold" ? 3 :
-  2; // regular
+  weight === "thin" ? 8 :
+  weight === "light" ? 12 :
+  weight === "bold" ? 24 :
+  16; // regular
 
 // Handle fill weight
 if (weight === "fill") {
@@ -639,10 +639,10 @@ export const NotificationBell: React.FC<IconProps> = ({
   weight = "regular"
 }) => {
   const strokeWidth = 
-    weight === "thin" ? 1 :
-    weight === "light" ? 1.5 :
-    weight === "bold" ? 3 :
-    2;
+    weight === "thin" ? 8 :
+    weight === "light" ? 12 :
+    weight === "bold" ? 24 :
+    16;
 
   if (weight === "fill") {
     return (

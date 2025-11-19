@@ -1,0 +1,18 @@
+# Dependency installations
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

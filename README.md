@@ -74,7 +74,7 @@ yarn add zinspector-icons@github:zInspector/zInspector-Icons
 yarn add phosphor-react react react-dom
 
 # Start using immediately
-import { Icon } from "zinspector-icons/react-web";
+import { Icon } from "@zinspector/icons/src/react-native";
 ```
 
 #### React Native Project with Yarn
@@ -105,9 +105,9 @@ export default function MyScreen() {
     <View style={styles.container}>
       {/* Phosphor icons with different weights */}
       <Icon name="House" size={32} color="#007AFF" />
-      <Icon name="Heart" size={28} color="#FF3B30" weight="fill" />
-      <Icon name="Star" size={30} color="#FFCC02" weight="bold" />
-      <Icon name="User" size={24} color="#8E8E93" weight="light" />
+      <Icon name="Heart" size={32} color="#FF3B30" weight="fill" />
+      <Icon name="Star" size={32} color="#FFCC02" weight="bold" />
+      <Icon name="User" size={32} color="#8E8E93" weight="light" />
       
       {/* Custom zInspector icons */}
       <Icon name="MyCustomIcon" size={32} color="#34C759" weight="bold" />

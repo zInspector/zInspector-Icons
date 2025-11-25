@@ -413,15 +413,15 @@ Examples: `House`, `Heart`, `Star`, `User`, `Bell`, `Settings`, `Search`, etc.
 
 #### 1. Create the Icon Component
 
-Create a new `.tsx` file in `src/custom/` directory. Name it descriptively (e.g., `ZInspectorLogo.tsx`):
+Create a new `.tsx` file in `src/custom/` directory. Name it descriptively (e.g., `MoveInIcon.tsx`):
 
 ```tsx
-// src/custom/ZInspectorLogo.tsx
+// src/custom/MoveInIcon.tsx
 import React from "react";
 import type { IconProps } from "../types";
-import Svg, { Path, Circle, Rect } from "react-native-svg";
+import Svg, { Path, G, Defs, ClipPath, Rect } from "react-native-svg";
 
-export const ZInspectorLogo: React.FC<IconProps> = ({
+export const MoveInIcon: React.FC<IconProps> = ({
   size = 24,
   color = "currentColor",
   weight = "regular"
@@ -476,11 +476,13 @@ import type { IconProps } from "./types";
 import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
 
 import { MyCustomIcon } from "./custom/MyCustomIcon";
-import { ZInspectorLogo } from "./custom/ZInspectorLogo"; // Add this line
+import { MoveInIcon } from "./custom/MoveInIcon"; // Add this line
+import { MoveOutIcon } from "./custom/MoveOutIcon"; // Add this line
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
   MyCustomIcon,
-  ZInspectorLogo // Add this line
+  MoveInIcon, // Add this line
+  MoveOutIcon // Add this line
 };
 
 // ...rest of the file
@@ -498,11 +500,13 @@ import type { IconProps } from "./types";
 import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
 
 import { MyCustomIcon } from "./custom/MyCustomIcon";
-import { ZInspectorLogo } from "./custom/ZInspectorLogo"; // Add this line
+import { MoveInIcon } from "./custom/MoveInIcon"; // Add this line
+import { MoveOutIcon } from "./custom/MoveOutIcon"; // Add this line
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
   MyCustomIcon,
-  ZInspectorLogo // Add this line
+  MoveInIcon, // Add this line
+  MoveOutIcon // Add this line
 };
 
 // ...rest of the file
@@ -514,12 +518,16 @@ If you need a web-only version with pure HTML SVG, add to `src/react-web-only.ts
 
 ```tsx
 // Add to src/react-web-only.tsx
-const ZInspectorLogoWeb: React.FC<IconProps> = ({
+const MoveInIconWeb: React.FC<IconProps> = ({
   size = 24,
   color = "currentColor",
   weight = "regular"
 }) => {
-  const strokeWidth = weight === "bold" ? 3 : weight === "light" ? 1.5 : 2;
+  const strokeWidth = 
+    weight === "thin" ? 8 :
+    weight === "light" ? 12 :
+    weight === "bold" ? 24 :
+    16; // default regular
   
   return (
     <svg
@@ -529,13 +537,27 @@ const ZInspectorLogoWeb: React.FC<IconProps> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M128 32L224 128L128 224L32 128L128 32z"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <g clipPath="url(#clip0_1_2)">
+        <path
+          d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z"
+          stroke={color}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M34 123L68 156L34 189"
+          stroke={color}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_2">
+          <rect width="256" height="256" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   );
 };
@@ -543,7 +565,8 @@ const ZInspectorLogoWeb: React.FC<IconProps> = ({
 // Add to customIcons object
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
   MyCustomIcon: MyCustomIconWeb,
-  ZInspectorLogo: ZInspectorLogoWeb, // Add this line
+  MoveInIcon: MoveInIconWeb, // Add this line
+  MoveOutIcon: MoveOutIconWeb, // Add this line
 };
 ```
 
@@ -555,8 +578,17 @@ For raw SVG usage, add to `src/svg.ts`:
 // src/svg.ts
 const customIconSvgs: Record<string, string> = {
   MyCustomIcon: `<svg viewBox="0 0 256 256" fill="none">...</svg>`,
-  ZInspectorLogo: `<svg viewBox="0 0 256 256" fill="none">
-    <path d="M128 32L224 128L128 224L32 128L128 32z" stroke="currentColor" stroke-width="2"/>
+  MoveInIcon: `<svg viewBox="0 0 256 256" fill="none">
+    <g clip-path="url(#clip0_1_2)">
+      <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="currentColor" stroke-width="16"/>
+      <path d="M34 123L68 156L34 189" stroke="currentColor" stroke-width="16"/>
+    </g>
+  </svg>`, // Add this line
+  MoveOutIcon: `<svg viewBox="0 0 256 256" fill="none">
+    <g clip-path="url(#clip0_1_12)">
+      <path d="M186 128L220 161L186 194" stroke="currentColor" stroke-width="16"/>
+      <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="currentColor" stroke-width="16"/>
+    </g>
   </svg>`, // Add this line
 };
 ```
@@ -576,19 +608,23 @@ yarn build
 ```tsx
 // React Native (npm)
 import { Icon } from "zInspector-Icons/react-native";
-<Icon name="ZInspectorLogo" size={32} color="#007AFF" weight="bold" />
+<Icon name="MoveInIcon" size={32} color="#007AFF" weight="bold" />
+<Icon name="MoveOutIcon" size={32} color="#ff3b30" weight="bold" />
 
 // React Native (yarn)
 import { Icon } from "zinspector-icons/react-native";
-<Icon name="ZInspectorLogo" size={32} color="#007AFF" weight="bold" />
+<Icon name="MoveInIcon" size={32} color="#007AFF" weight="bold" />
+<Icon name="MoveOutIcon" size={32} color="#ff3b30" weight="bold" />
 
 // Web Dashboard (npm)
 import { Icon } from "zInspector-Icons/react-web";
-<Icon name="ZInspectorLogo" size={24} color="#333" />
+<Icon name="MoveInIcon" size={24} color="#333" />
+<Icon name="MoveOutIcon" size={24} color="#333" />
 
 // Web Dashboard (yarn)
 import { Icon } from "zinspector-icons/react-web";
-<Icon name="ZInspectorLogo" size={24} color="#333" />
+<Icon name="MoveInIcon" size={24} color="#333" />
+<Icon name="MoveOutIcon" size={24} color="#333" />
 ```
 
 ### Icon Creation Tips
@@ -596,7 +632,7 @@ import { Icon } from "zinspector-icons/react-web";
 #### Best Practices
 - **Use consistent viewBox**: Always use `viewBox="0 0 256 256"` to match Phosphor icons
 - **Support all weights**: Implement `thin`, `light`, `regular`, `bold`, and `fill` weights
-- **Use semantic naming**: Choose descriptive names like `ZInspectorLogo`, `CompanyIcon`
+- **Use semantic naming**: Choose descriptive names like `MoveInIcon`, `MoveOutIcon`, `CompanyLogo`
 - **Optimize paths**: Use simple, clean SVG paths for better performance
 
 #### Weight Implementation

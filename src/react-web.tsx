@@ -5,9 +5,13 @@ import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
 
 // Importa todos tus custom icons (podés hacer un index en ./custom si preferís)
 import { MyCustomIcon } from "./custom/MyCustomIcon";
+import { MoveInIcon } from "./custom/MoveInIcon";
+import { MoveOutIcon } from "./custom/MoveOutIcon";
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
-  MyCustomIcon
+  MyCustomIcon,
+  MoveInIcon,
+  MoveOutIcon
 };
 
 // Filtrar solo los componentes de iconos, excluyendo IconContext

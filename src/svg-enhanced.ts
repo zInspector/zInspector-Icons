@@ -8,14 +8,9 @@ const CUSTOM_SVGS: Record<string, string> = {
   MyCustomIcon: `<svg viewBox="0 0 256 256" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M128 24L56 152H200L128 24Z" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M128 152V224" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>
-  </svg>`,
+  </svg>`
   
   // Puedes agregar más iconos custom aquí
-  ZInspectorLogo: `<svg viewBox="0 0 256 256" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16"/>
-    <path d="M104 104h48v48h-48z" stroke="currentColor" stroke-width="16" fill="currentColor" opacity="0.2"/>
-    <text x="128" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">Z</text>
-  </svg>`
 };
 
 /**

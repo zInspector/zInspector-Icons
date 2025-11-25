@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Custom Icons Browser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .icon-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .icon-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .icon-sizes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .icon-weights {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .weight-label {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .description {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .custom { border-color: #8b5cf6; background-color: #faf5ff; }
+        .movein { border-color: #3b82f6; background-color: #f0f9ff; }
+        .moveout { border-color: #ef4444; background-color: #fef2f2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Custom Icons Library Browser</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">
+            @zinspector/icons v0.1.2 - Custom Icon Collection
+        </p>
+        
+        <div class="icon-grid">
+            <!-- MyCustomIcon -->
+            <div class="icon-card custom">
+                <h3>🔺 MyCustomIcon</h3>
+                <div class="description">
+                    Example custom icon with triangle and line design
+                </div>
+                
+                <div class="icon-sizes">
+                    <div>
+                        <svg width="16" height="16" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">16px</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">24px</div>
+                    </div>
+                    <div>
+                        <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">32px</div>
+                    </div>
+                    <div>
+                        <svg width="48" height="48" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">48px</div>
+                    </div>
+                </div>
+
+                <div class="icon-weights">
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">thin</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="12" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">light</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="16" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">regular</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 24L56 152H200L128 24Z" stroke="#8b5cf6" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M128 152V224" stroke="#8b5cf6" stroke-width="24" stroke-linecap="round"/>
+                        </svg>
+                        <div class="weight-label">bold</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MoveInIcon -->
+            <div class="icon-card movein">
+                <h3>🏠⬅️ MoveInIcon</h3>
+                <div class="description">
+                    House with arrow pointing TO it from the left - represents "move in"
+                </div>
+                
+                <div class="icon-sizes">
+                    <div>
+                        <svg width="16" height="16" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_16)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_16"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">16px</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_24)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_24"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">24px</div>
+                    </div>
+                    <div>
+                        <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_32)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_32"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">32px</div>
+                    </div>
+                    <div>
+                        <svg width="48" height="48" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_48)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_48"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">48px</div>
+                    </div>
+                </div>
+
+                <div class="icon-weights">
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_thin)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_thin"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">thin</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_light)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_light"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">light</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_regular)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_regular"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">regular</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#movein_bold)">
+                                <path d="M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z" stroke="#3b82f6" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 123L68 156L34 189" stroke="#3b82f6" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="movein_bold"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">bold</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MoveOutIcon -->
+            <div class="icon-card moveout">
+                <h3>🏠➡️ MoveOutIcon</h3>
+                <div class="description">
+                    House with arrow pointing AWAY from it to the right - represents "move out"
+                </div>
+                
+                <div class="icon-sizes">
+                    <div>
+                        <svg width="16" height="16" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_16)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_16"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">16px</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_24)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_24"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">24px</div>
+                    </div>
+                    <div>
+                        <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_32)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_32"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">32px</div>
+                    </div>
+                    <div>
+                        <svg width="48" height="48" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_48)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_48"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">48px</div>
+                    </div>
+                </div>
+
+                <div class="icon-weights">
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_thin)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_thin"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">thin</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_light)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_light"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">light</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_regular)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_regular"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">regular</div>
+                    </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#moveout_bold)">
+                                <path d="M186 128L220 161L186 194" stroke="#ef4444" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z" stroke="#ef4444" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs><clipPath id="moveout_bold"><rect width="256" height="256" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="weight-label">bold</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6; margin-top: 30px;">
+            <h3 style="margin-top: 0; color: #1e40af;">📚 Usage Examples</h3>
+            <div style="background-color: white; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 14px; margin: 10px 0;">
+                <div style="color: #059669; margin-bottom: 8px;">// React/Next.js usage:</div>
+                <div>&lt;Icon name="MoveInIcon" size={32} color="#3b82f6" weight="bold" /&gt;</div>
+                <div>&lt;Icon name="MoveOutIcon" size={24} color="#ef4444" weight="regular" /&gt;</div>
+                <div>&lt;Icon name="MyCustomIcon" size={20} color="#8b5cf6" weight="light" /&gt;</div>
+            </div>
+            <p style="color: #1e40af; margin-bottom: 0;">
+                All icons support: <strong>thin</strong>, <strong>light</strong>, <strong>regular</strong>, <strong>bold</strong>, and <strong>fill</strong> weights
+            </p>
+        </div>
+    </div>
+</body>
+</html>

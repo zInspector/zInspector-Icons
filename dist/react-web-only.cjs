@@ -115,23 +115,23 @@ var MoveInIconWeb = ({
         fill: "none",
         xmlns: "http://www.w3.org/2000/svg",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("g", { clipPath: "url(#clip0_973_27224)", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("g", { clipPath: "url(#clip0_1_2)", children: [
             /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               "path",
               {
-                d: "M246.067 113.79L178.984 42.1909C176.468 39.5074 173.057 38 169.5 38C165.943 38 162.532 39.5074 160.016 42.1909L92.9328 113.79C91.6809 115.116 90.6886 116.695 90.0134 118.434C89.3383 120.173 88.9938 122.039 89.0001 123.921V209.84C89.0001 211.739 89.7069 213.56 90.9649 214.903C92.223 216.246 93.9293 217 95.7084 217H149.375C151.154 217 152.86 216.246 154.119 214.903C155.377 213.56 156.083 211.739 156.083 209.84V159.721H182.917V209.84C182.917 211.739 183.623 213.56 184.881 214.903C186.14 216.246 187.846 217 189.625 217H243.292C245.071 217 246.777 216.246 248.035 214.903C249.293 213.56 250 211.739 250 209.84V123.921C250.006 122.039 249.662 120.173 248.987 118.434C248.311 116.695 247.319 115.116 246.067 113.79ZM236.583 202.68H196.333V152.561C196.333 150.662 195.627 148.841 194.368 147.498C193.11 146.155 191.404 145.401 189.625 145.401H149.375C147.596 145.401 145.89 146.155 144.632 147.498C143.373 148.841 142.667 150.662 142.667 152.561V202.68H102.417V123.921L169.5 52.3221L236.583 123.921V202.68Z",
+                d: "M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z",
                 fill: color
               }
             ),
             /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               "path",
               {
-                d: "M29.8023 73.0076C32.4722 70.3303 36.8092 70.3313 39.4797 73.0076L82.9972 116.648C85.6676 119.326 85.6676 123.674 82.9972 126.352L39.4797 169.992C36.8092 172.669 32.4722 172.67 29.8023 169.992C27.1325 167.315 27.1335 162.966 29.8023 160.288L61.6494 128.361L-5.99999 128.361L-6 114.639L61.6494 114.639L29.8023 82.7123C27.1335 80.0343 27.1324 75.685 29.8023 73.0076Z",
+                d: "M34 123L68 156L34 189",
                 fill: color
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("clipPath", { id: "clip0_973_27224", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("rect", { width: "256", height: "256", fill: "white" }) }) })
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("clipPath", { id: "clip0_1_2", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("rect", { width: "256", height: "256", fill: "white" }) }) })
         ]
       }
     );
@@ -145,45 +145,110 @@ var MoveInIconWeb = ({
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg",
       children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-          "path",
-          {
-            d: "M236.583 202.68H196.333V152.561C196.333 150.662 195.627 148.841 194.368 147.498C193.11 146.155 191.404 145.401 189.625 145.401H149.375C147.596 145.401 145.89 146.155 144.632 147.498C143.373 148.841 142.667 150.662 142.667 152.561V202.68H102.417V123.921L169.5 52.3221L236.583 123.921V202.68Z",
-            stroke: color,
-            strokeWidth,
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            fill: "none"
-          }
-        ),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-          "path",
-          {
-            d: "M29.8023 73.0076L39.4797 73.0076L82.9972 116.648C85.6676 119.326 85.6676 123.674 82.9972 126.352L39.4797 169.992C36.8092 172.669 32.4722 172.67 29.8023 169.992C27.1325 167.315 27.1335 162.966 29.8023 160.288L61.6494 128.361L29.8023 82.7123C27.1335 80.0343 27.1324 75.685 29.8023 73.0076Z",
-            stroke: color,
-            strokeWidth,
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            fill: "none"
-          }
-        ),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-          "path",
-          {
-            d: "M-6 128.361H61.6494",
-            stroke: color,
-            strokeWidth,
-            strokeLinecap: "round",
-            fill: "none"
-          }
-        )
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("g", { clipPath: "url(#clip0_1_2)", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            "path",
+            {
+              d: "M96 217H216V121.003C216.001 119.952 215.86 118.912 215.586 117.941C215.312 116.969 214.911 116.087 214.405 115.343L159.859 35.3462C159.353 34.6024 158.751 34.0124 158.089 33.6098C157.427 33.2072 156.717 33 156 33C155.283 33 154.573 33.2072 153.911 33.6098C153.249 34.0124 152.647 34.6024 152.141 35.3462L97.5955 115.343C97.0891 116.087 96.6876 116.969 96.4138 117.941C96.14 118.912 95.9994 119.952 96 121.003V217Z",
+              stroke: color,
+              strokeWidth,
+              strokeLinecap: "round",
+              strokeLinejoin: "round"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            "path",
+            {
+              d: "M34 123L68 156L34 189",
+              stroke: color,
+              strokeWidth,
+              strokeLinecap: "round",
+              strokeLinejoin: "round"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("clipPath", { id: "clip0_1_2", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("rect", { width: "256", height: "256", fill: "white" }) }) })
+      ]
+    }
+  );
+};
+var MoveOutIconWeb = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  if (weight === "fill") {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+      "svg",
+      {
+        width: size,
+        height: size,
+        viewBox: "0 0 256 256",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("g", { clipPath: "url(#clip0_1_12)", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+              "path",
+              {
+                d: "M186 128L220 161L186 194",
+                fill: color
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+              "path",
+              {
+                d: "M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z",
+                fill: color
+              }
+            )
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("clipPath", { id: "clip0_1_12", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("rect", { width: "256", height: "256", fill: "white" }) }) })
+        ]
+      }
+    );
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+    "svg",
+    {
+      width: size,
+      height: size,
+      viewBox: "0 0 256 256",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("g", { clipPath: "url(#clip0_1_12)", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            "path",
+            {
+              d: "M186 128L220 161L186 194",
+              stroke: color,
+              strokeWidth,
+              strokeLinecap: "round",
+              strokeLinejoin: "round"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            "path",
+            {
+              d: "M39 214H159V118.003C159.001 116.952 158.86 115.912 158.586 114.941C158.312 113.969 157.911 113.087 157.405 112.343L102.859 32.3462C102.353 31.6024 101.751 31.0124 101.089 30.6098C100.427 30.2072 99.7168 30 99 30C98.2832 30 97.5734 30.2072 96.9112 30.6098C96.2491 31.0124 95.6475 31.6024 95.1409 32.3462L40.5955 112.343C40.0891 113.087 39.6876 113.969 39.4138 114.941C39.14 115.912 38.9994 116.952 39 118.003V214Z",
+              stroke: color,
+              strokeWidth,
+              strokeLinecap: "round",
+              strokeLinejoin: "round"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("clipPath", { id: "clip0_1_12", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("rect", { width: "256", height: "256", fill: "white" }) }) })
       ]
     }
   );
 };
 var customIcons = {
   MyCustomIcon: MyCustomIconWeb,
-  MoveInIcon: MoveInIconWeb
+  MoveInIcon: MoveInIconWeb,
+  MoveOutIcon: MoveOutIconWeb
 };
 var { IconContext, ...phosphorIcons } = Phosphor;
 var iconPack = {

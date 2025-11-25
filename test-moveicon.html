@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveInIcon Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .icon-test {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        .icon-label {
+            min-width: 120px;
+            font-weight: bold;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #666;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        .test-group {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 MoveInIcon Test</h1>
+        
+        <div class="test-group">
+            <h2>Size Variations</h2>
+            <div class="icon-test">
+                <span class="icon-label">Size 16:</span>
+                <div id="size-16"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Size 24:</span>
+                <div id="size-24"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Size 32:</span>
+                <div id="size-32"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Size 48:</span>
+                <div id="size-48"></div>
+            </div>
+        </div>
+
+        <div class="test-group">
+            <h2>Weight Variations</h2>
+            <div class="icon-test">
+                <span class="icon-label">Thin:</span>
+                <div id="weight-thin"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Light:</span>
+                <div id="weight-light"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Regular:</span>
+                <div id="weight-regular"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Bold:</span>
+                <div id="weight-bold"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Fill:</span>
+                <div id="weight-fill"></div>
+            </div>
+        </div>
+
+        <div class="test-group">
+            <h2>Color Variations</h2>
+            <div class="icon-test">
+                <span class="icon-label">Black:</span>
+                <div id="color-black"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Blue:</span>
+                <div id="color-blue"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Green:</span>
+                <div id="color-green"></div>
+            </div>
+            <div class="icon-test">
+                <span class="icon-label">Red:</span>
+                <div id="color-red"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the icon library
+        import { Icon } from './dist/react-web-only.js';
+        import React from 'https://esm.sh/react@18';
+        import { createRoot } from 'https://esm.sh/react-dom@18/client';
+
+        // Helper function to render icon
+        function renderIcon(containerId, props) {
+            const container = document.getElementById(containerId);
+            const root = createRoot(container);
+            root.render(React.createElement(Icon, { name: 'MoveInIcon', ...props }));
+        }
+
+        // Test different sizes
+        renderIcon('size-16', { size: 16 });
+        renderIcon('size-24', { size: 24 });
+        renderIcon('size-32', { size: 32 });
+        renderIcon('size-48', { size: 48 });
+
+        // Test different weights
+        renderIcon('weight-thin', { size: 32, weight: 'thin' });
+        renderIcon('weight-light', { size: 32, weight: 'light' });
+        renderIcon('weight-regular', { size: 32, weight: 'regular' });
+        renderIcon('weight-bold', { size: 32, weight: 'bold' });
+        renderIcon('weight-fill', { size: 32, weight: 'fill' });
+
+        // Test different colors
+        renderIcon('color-black', { size: 32, color: '#000000' });
+        renderIcon('color-blue', { size: 32, color: '#3b82f6' });
+        renderIcon('color-green', { size: 32, color: '#10b981' });
+        renderIcon('color-red', { size: 32, color: '#ef4444' });
+    </script>
+</body>
+</html>

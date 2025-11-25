@@ -5,7 +5,6 @@ export default defineConfig({
     "react-web-only": "src/react-web-only.tsx",
     "react-web": "src/react-web.tsx", 
     "react-native": "src/react-native.tsx",
-    "svg": "src/svg.ts",
     "svg-enhanced": "src/svg-enhanced.ts",
     "svg-generator": "src/svg-generator.ts"
   },

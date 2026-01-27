@@ -57,7 +57,7 @@
     "clean": "rm -rf dist"
   },
   "peerDependencies": {
-    "phosphor-react": ">=2",
+    "phosphor-react": ">=1.4",
     "phosphor-react-native": ">=2",
     "react": ">=17",
     "react-dom": ">=17",

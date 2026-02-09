@@ -239,7 +239,7 @@ const customIcons: Record<string, React.ComponentType<IconProps>> = {
   MyCustomIcon: MyCustomIconWeb,
   MoveInIcon: MoveInIconWeb,
   MoveOutIcon: MoveOutIconWeb,
-  ZCarpetCleaningIcon: ZCarpetCleaningIconWeb
+  ZCarpetCleaning: ZCarpetCleaningIconWeb
 };
 
 

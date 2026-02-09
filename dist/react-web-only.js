@@ -260,7 +260,7 @@ var customIcons = {
   MyCustomIcon: MyCustomIconWeb,
   MoveInIcon: MoveInIconWeb,
   MoveOutIcon: MoveOutIconWeb,
-  ZCarpetCleaning: ZCarpetCleaningIconWeb
+  ZCarpetCleaningIcon: ZCarpetCleaningIconWeb
 };
 var { IconContext, ...phosphorIcons } = Phosphor;
 var iconPack = {

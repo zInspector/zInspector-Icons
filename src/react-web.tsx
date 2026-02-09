@@ -7,11 +7,13 @@ import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
 import { MyCustomIcon } from "./custom/MyCustomIcon";
 import { MoveInIcon } from "./custom/MoveInIcon";
 import { MoveOutIcon } from "./custom/MoveOutIcon";
+import { ZCarpetCleaningIcon } from "./custom/ZCarpetCleaningIcon";
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
   MyCustomIcon,
   MoveInIcon,
-  MoveOutIcon
+  MoveOutIcon,
+  ZCarpetCleaningIcon
 };
 
 // Filtrar solo los componentes de iconos, excluyendo IconContext

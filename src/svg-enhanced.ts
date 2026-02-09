@@ -8,8 +8,17 @@ const CUSTOM_SVGS: Record<string, string> = {
   MyCustomIcon: `<svg viewBox="0 0 256 256" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M128 24L56 152H200L128 24Z" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M128 152V224" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>
+  </svg>`,
+  ZCarpetCleaningIcon: `<svg viewBox="0 0 256 256" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="56" cy="184" r="32" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M86.3,172.9A32.1,32.1,0,0,0,56,120H40V104a32,32,0,0,1,32-32h80" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M86.3,172.9H184V216" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="216" y1="216" x2="232" y2="216" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M200,24H152V176" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M200,24H232V176" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="184" y1="216" x2="248" y2="216" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`
-  
+
   // Puedes agregar más iconos custom aquí
 };
 
@@ -22,7 +31,7 @@ export function getIconSvg(name: string): string | null {
   if (CUSTOM_SVGS[name]) {
     return CUSTOM_SVGS[name];
   }
-  
+
   // For Phosphor icons, return instructions
   console.warn(`
     🔍 Icon "${name}" not found in custom icons.
@@ -35,7 +44,7 @@ export function getIconSvg(name: string): string | null {
     
     Or use the combined approach with getPhosphorIcon() function.
   `);
-  
+
   return null;
 }
 
@@ -77,7 +86,7 @@ export function getIconSvgWithPhosphor(name: string): string | null {
   if (CUSTOM_SVGS[name]) {
     return CUSTOM_SVGS[name];
   }
-  
+
   // Instructions for integrating with Phosphor Web
   console.info(`
     To integrate with Phosphor Web icons, create this function in your project:
@@ -101,6 +110,6 @@ export function getIconSvgWithPhosphor(name: string): string | null {
       return null;
     }
   `);
-  
+
   return null;
 }

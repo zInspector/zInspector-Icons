@@ -282,11 +282,130 @@ var MoveOutIcon = ({
   );
 };
 
+// src/custom/ZCarpetCleaningIcon.tsx
+var import_react_native_svg4 = __toESM(require("react-native-svg"), 1);
+var import_jsx_runtime5 = require("react/jsx-runtime");
+var ZCarpetCleaningIcon = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  if (weight === "fill") {
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+      import_react_native_svg4.default,
+      {
+        width: size,
+        height: size,
+        viewBox: "0 0 256 256",
+        fill: "none",
+        children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Path,
+          {
+            d: "M56,216a32,32,0,1,1,32-32A32,32,0,0,1,56,216Zm120-40H91.4a38.6,38.6,0,0,0,3.6-16A40,40,0,0,0,56,120H40V104a32,32,0,0,1,32-32h80V40H112a8,8,0,0,1,0-16h80a8,8,0,0,1,8,8V216a8,8,0,0,1-16,0V176Z",
+            fill: color
+          }
+        )
+      }
+    );
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
+    import_react_native_svg4.default,
+    {
+      width: size,
+      height: size,
+      viewBox: "0 0 256 256",
+      fill: "none",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Circle,
+          {
+            cx: "56",
+            cy: "184",
+            r: "32",
+            stroke: color,
+            strokeWidth,
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Path,
+          {
+            d: "M86.3,172.9A32.1,32.1,0,0,0,56,120H40V104a32,32,0,0,1,32-32h80",
+            stroke: color,
+            strokeWidth,
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Path,
+          {
+            d: "M86.3,172.9H184V216",
+            stroke: color,
+            strokeWidth,
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Line,
+          {
+            x1: "216",
+            y1: "216",
+            x2: "232",
+            y2: "216",
+            stroke: color,
+            strokeWidth,
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Path,
+          {
+            d: "M200,24H152V176",
+            stroke: color,
+            strokeWidth,
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Path,
+          {
+            d: "M200,24H232V176",
+            stroke: color,
+            strokeWidth,
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          import_react_native_svg4.Line,
+          {
+            x1: "184",
+            y1: "216",
+            x2: "248",
+            y2: "216",
+            stroke: color,
+            strokeWidth,
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+};
+
 // src/react-native.tsx
 var customIcons = {
   MyCustomIcon,
   MoveInIcon,
-  MoveOutIcon
+  MoveOutIcon,
+  ZCarpetCleaningIcon
 };
 var { IconContext, ...phosphorNativeIcons } = PhosphorNative;
 var iconPack = {

@@ -8,12 +8,25 @@ import { ZCarpetCleaningIcon } from "./custom/ZCarpetCleaningIcon";
 import { ZMoveOutIcon } from "./custom/ZMoveOutIcon";
 import { ZMoveInIcon } from "./custom/ZMoveInIcon";
 import { ZGalleryIcon } from "./custom/ZGalleryIcon";
+import { ZBuildingIcon } from "./custom/ZBuildingIcon";
+import { ZInspectionIcon } from "./custom/ZInspectionIcon";
+import { ZNlmIcon } from "./custom/ZNlmIcon";
+import { ZTenantInspectionIcon } from "./custom/ZTenantInspectionIcon";
+import { ZPreInspectionIcon } from "./custom/ZPreInspectionIcon";
+import { ZFencingIcon } from "./custom/ZFencingIcon";
+
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
   ZCarpetCleaningIcon,
   ZMoveOutIcon,
   ZMoveInIcon,
-  ZGalleryIcon
+  ZGalleryIcon,
+  ZBuildingIcon,
+  ZInspectionIcon,
+  ZNlmIcon,
+  ZFencingIcon,
+  ZTenantInspectionIcon,
+  ZPreInspectionIcon
 };
 
 // Filtrar solo los componentes de iconos, excluyendo IconContext

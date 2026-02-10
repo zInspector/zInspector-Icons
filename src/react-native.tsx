@@ -3,16 +3,17 @@ import * as PhosphorNative from "phosphor-react-native";
 import type { IconProps } from "./types";
 import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
 
-import { MyCustomIcon } from "./custom/MyCustomIcon";
-import { MoveInIcon } from "./custom/MoveInIcon";
-import { MoveOutIcon } from "./custom/MoveOutIcon";
+
 import { ZCarpetCleaningIcon } from "./custom/ZCarpetCleaningIcon";
+import { ZMoveOutIcon } from "./custom/ZMoveOutIcon";
+import { ZMoveInIcon } from "./custom/ZMoveInIcon";
+import { ZGalleryIcon } from "./custom/ZGalleryIcon";
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
-  MyCustomIcon,
-  MoveInIcon,
-  MoveOutIcon,
-  ZCarpetCleaningIcon
+  ZCarpetCleaningIcon,
+  ZMoveOutIcon,
+  ZMoveInIcon,
+  ZGalleryIcon
 };
 
 // Filtrar solo los componentes de iconos, excluyendo IconContext

@@ -22,286 +22,67 @@ function createIconComponent(iconPack2) {
   return Icon2;
 }
 
-// src/custom/MyCustomIcon.tsx
-import Svg, { Path } from "react-native-svg";
-import { jsx as jsx2, jsxs } from "react/jsx-runtime";
-var MyCustomIcon = ({
-  size = 24,
-  color = "currentColor",
-  weight = "regular"
-}) => {
-  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
-  return /* @__PURE__ */ jsxs(
-    Svg,
-    {
-      width: size,
-      height: size,
-      viewBox: "0 0 256 256",
-      fill: "none",
-      children: [
-        /* @__PURE__ */ jsx2(
-          Path,
-          {
-            d: "M128 24L56 152h144L128 24z",
-            stroke: color,
-            strokeWidth,
-            strokeLinecap: "round",
-            strokeLinejoin: "round"
-          }
-        ),
-        /* @__PURE__ */ jsx2(
-          Path,
-          {
-            d: "M128 152v80",
-            stroke: color,
-            strokeWidth,
-            strokeLinecap: "round"
-          }
-        )
-      ]
-    }
-  );
-};
-
-// src/custom/MoveInIcon.tsx
-import Svg2, { Path as Path2, G, Defs, ClipPath, Rect } from "react-native-svg";
-import { jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
-var MoveInIcon = ({
-  size = 24,
-  color = "currentColor",
-  weight = "regular"
-}) => {
-  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
-  if (weight === "fill") {
-    return /* @__PURE__ */ jsxs2(
-      Svg2,
-      {
-        width: size,
-        height: size,
-        viewBox: "0 0 256 256",
-        fill: "none",
-        children: [
-          /* @__PURE__ */ jsxs2(G, { clipPath: "url(#clip0_1_24)", children: [
-            /* @__PURE__ */ jsx3(
-              Path2,
-              {
-                d: "M42.34 114.34L122.34 34.34C123.083 33.5962 123.965 33.0061 124.936 32.6035C125.908 32.2009 126.949 31.9937 128 31.9937C129.051 31.9937 130.092 32.2009 131.064 32.6035C132.035 33.0061 132.917 33.5962 133.66 34.34L213.66 114.34C214.403 115.084 214.992 115.966 215.393 116.937C215.795 117.908 216.001 118.949 216 120V216H40L40 192",
-                fill: color
-              }
-            ),
-            /* @__PURE__ */ jsx3(
-              Path2,
-              {
-                d: "M40 150L171 150",
-                fill: color
-              }
-            ),
-            /* @__PURE__ */ jsx3(
-              Path2,
-              {
-                d: "M139 182L171 149.5L139 117",
-                fill: color
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsx3(Defs, { children: /* @__PURE__ */ jsx3(ClipPath, { id: "clip0_1_2", children: /* @__PURE__ */ jsx3(Rect, { width: "256", height: "256", fill: "white" }) }) })
-        ]
-      }
-    );
-  }
-  return /* @__PURE__ */ jsxs2(
-    Svg2,
-    {
-      width: size,
-      height: size,
-      viewBox: "0 0 256 256",
-      fill: "none",
-      children: [
-        /* @__PURE__ */ jsxs2(G, { clipPath: "url(#clip0_1_24)", children: [
-          /* @__PURE__ */ jsx3(
-            Path2,
-            {
-              d: "M42.34 114.34L122.34 34.34C123.083 33.5962 123.965 33.0061 124.936 32.6035C125.908 32.2009 126.949 31.9937 128 31.9937C129.051 31.9937 130.092 32.2009 131.064 32.6035C132.035 33.0061 132.917 33.5962 133.66 34.34L213.66 114.34C214.403 115.084 214.992 115.966 215.393 116.937C215.795 117.908 216.001 118.949 216 120V216H40L40 192",
-              stroke: color,
-              strokeWidth,
-              strokeLinecap: "round",
-              strokeLinejoin: "round"
-            }
-          ),
-          /* @__PURE__ */ jsx3(
-            Path2,
-            {
-              d: "M40 150L171 150",
-              stroke: color,
-              strokeWidth,
-              strokeLinecap: "round",
-              strokeLinejoin: "round"
-            }
-          ),
-          /* @__PURE__ */ jsx3(
-            Path2,
-            {
-              d: "M139 182L171 149.5L139 117",
-              stroke: color,
-              strokeWidth,
-              strokeLinecap: "round",
-              strokeLinejoin: "round"
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsx3(Defs, { children: /* @__PURE__ */ jsx3(ClipPath, { id: "clip0_1_24", children: /* @__PURE__ */ jsx3(Rect, { width: "256", height: "256", fill: "white" }) }) })
-      ]
-    }
-  );
-};
-
-// src/custom/MoveOutIcon.tsx
-import Svg3, { Path as Path3, G as G2, Defs as Defs2, ClipPath as ClipPath2, Rect as Rect2 } from "react-native-svg";
-import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
-var MoveOutIcon = ({
-  size = 24,
-  color = "currentColor",
-  weight = "regular"
-}) => {
-  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
-  if (weight === "fill") {
-    return /* @__PURE__ */ jsxs3(
-      Svg3,
-      {
-        width: size,
-        height: size,
-        viewBox: "0 0 256 256",
-        fill: "none",
-        children: [
-          /* @__PURE__ */ jsxs3(G2, { clipPath: "url(#clip0_3_35)", children: [
-            /* @__PURE__ */ jsx4(
-              Path3,
-              {
-                d: "M213.66 114.34L133.66 34.34C132.917 33.5962 132.035 33.0061 131.064 32.6035C130.092 32.2009 129.051 31.9937 128 31.9937C126.949 31.9937 125.908 32.2009 124.936 32.6035C123.965 33.0061 123.083 33.5962 122.34 34.34L42.34 114.34C41.5973 115.084 41.0084 115.966 40.6069 116.937C40.2054 117.908 39.9992 118.949 40 120V216H216L216 192",
-                fill: color
-              }
-            ),
-            /* @__PURE__ */ jsx4(
-              Path3,
-              {
-                d: "M67 150L198 150",
-                fill: color
-              }
-            ),
-            /* @__PURE__ */ jsx4(
-              Path3,
-              {
-                d: "M166 182L198 149.5L166 117",
-                fill: color
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsx4(Defs2, { children: /* @__PURE__ */ jsx4(ClipPath2, { id: "clip0_1_12", children: /* @__PURE__ */ jsx4(Rect2, { width: "256", height: "256", fill: "white" }) }) })
-        ]
-      }
-    );
-  }
-  return /* @__PURE__ */ jsxs3(
-    Svg3,
-    {
-      width: size,
-      height: size,
-      viewBox: "0 0 256 256",
-      fill: "none",
-      children: [
-        /* @__PURE__ */ jsxs3(G2, { clipPath: "url(#clip0_3_35)", children: [
-          /* @__PURE__ */ jsx4(
-            Path3,
-            {
-              d: "M213.66 114.34L133.66 34.34C132.917 33.5962 132.035 33.0061 131.064 32.6035C130.092 32.2009 129.051 31.9937 128 31.9937C126.949 31.9937 125.908 32.2009 124.936 32.6035C123.965 33.0061 123.083 33.5962 122.34 34.34L42.34 114.34C41.5973 115.084 41.0084 115.966 40.6069 116.937C40.2054 117.908 39.9992 118.949 40 120V216H216L216 192",
-              stroke: color,
-              strokeWidth,
-              strokeLinecap: "round",
-              strokeLinejoin: "round"
-            }
-          ),
-          /* @__PURE__ */ jsx4(
-            Path3,
-            {
-              d: "M67 150L198 150",
-              stroke: color,
-              strokeWidth,
-              strokeLinecap: "round",
-              strokeLinejoin: "round"
-            }
-          ),
-          /* @__PURE__ */ jsx4(
-            Path3,
-            {
-              d: "M166 182L198 149.5L166 117",
-              stroke: color,
-              strokeWidth,
-              strokeLinecap: "round",
-              strokeLinejoin: "round"
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsx4(Defs2, { children: /* @__PURE__ */ jsx4(ClipPath2, { id: "clip0_3_35", children: /* @__PURE__ */ jsx4(Rect2, { width: "256", height: "256", fill: "white" }) }) })
-      ]
-    }
-  );
-};
-
 // src/custom/ZCarpetCleaningIcon.tsx
-import Svg4, { Path as Path4, Circle } from "react-native-svg";
-import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+import Svg, { Path, Circle } from "react-native-svg";
+import { jsx as jsx2, jsxs } from "react/jsx-runtime";
 var ZCarpetCleaningIcon = ({
   size = 24,
   color = "currentColor",
   weight = "regular"
 }) => {
   const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
-  return /* @__PURE__ */ jsxs4(
-    Svg4,
-    {
-      width: size,
-      height: size,
-      viewBox: "0 0 256 256",
-      fill: "none",
-      children: [
-        /* @__PURE__ */ jsx5(
-          Circle,
-          {
-            cx: "61.2807",
-            cy: "175.843",
-            r: "42.7807",
-            stroke: color,
-            strokeWidth
-          }
-        ),
-        /* @__PURE__ */ jsx5(
-          Path4,
-          {
-            d: "M31.105 142V104.422C31.105 103.87 31.5527 103.422 32.105 103.422H121.631C145.677 103.422 193.674 124.978 194.05 211.033C194.053 211.585 193.605 212.053 193.052 212.053H89",
-            stroke: color,
-            strokeWidth
-          }
-        ),
-        /* @__PURE__ */ jsx5(
-          Path4,
-          {
-            d: "M157.842 115.491V33C157.842 31.8954 158.737 31 159.842 31H228.263C229.367 31 230.263 31.8954 230.263 33V212.053M230.263 212.053H218.193M230.263 212.053H242.333",
-            stroke: color,
-            strokeWidth,
-            strokeLinecap: "round"
-          }
-        )
-      ]
-    }
-  );
+  return /* @__PURE__ */ jsxs(Svg, { width: size, height: size, viewBox: "0 0 256 256", fill: "none", children: [
+    /* @__PURE__ */ jsx2(Circle, { cx: "61.2807", cy: "175.843", r: "41.7807", stroke: color, strokeWidth }),
+    /* @__PURE__ */ jsx2(Path, { d: "M31.105 145.5L31.105 112.422C31.105 107.451 35.1344 103.422 40.105 103.422H121.631C145.487 103.422 192.918 124.639 194.032 209.009C194.054 210.666 192.709 212.053 191.052 212.053H82.5", stroke: color, strokeWidth }),
+    /* @__PURE__ */ jsx2(Path, { d: "M157.842 115.491V33C157.842 31.8954 158.737 31 159.842 31H228.263C229.367 31 230.263 31.8954 230.263 33V212.053M230.263 212.053H218.193M230.263 212.053H242.333", stroke: color, strokeWidth, "stroke-linecap": "round" })
+  ] });
+};
+
+// src/custom/ZMoveOutIcon.tsx
+import Svg2, { Path as Path2 } from "react-native-svg";
+import { jsx as jsx3 } from "react/jsx-runtime";
+var ZMoveOutIcon = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  return /* @__PURE__ */ jsx3(Svg2, { width: size, height: size, viewBox: "0 0 256 256", fill: "none", children: /* @__PURE__ */ jsx3(Path2, { d: "M202.5 217.5H43.5C41.2909 217.5 39.5 215.709 39.5 213.5V118.657C39.5 117.596 39.9214 116.579 40.6716 115.828L123.907 32.5931C125.374 31.126 127.719 31.0242 129.308 32.3588L189 82.5M202.5 102L238.5 147C238.617 147.182 238.486 147.421 238.27 147.421M126.5 147.421H238.27M238.27 147.421L202.5 192.5", stroke: color, strokeWidth, "stroke-linecap": "round" }) });
+};
+
+// src/custom/ZMoveInIcon.tsx
+import Svg3, { Path as Path3 } from "react-native-svg";
+import { jsx as jsx4 } from "react/jsx-runtime";
+var ZMoveInIcon = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  return /* @__PURE__ */ jsx4(Svg3, { width: size, height: size, viewBox: "0 0 256 256", fill: "none", children: /* @__PURE__ */ jsx4(Path3, { d: "M60.5464 217.586H219.546C221.756 217.586 223.546 215.795 223.546 213.586V118.743C223.546 117.682 223.125 116.665 222.375 115.914L139.14 32.6791C137.672 31.212 135.327 31.1102 133.738 32.4447L74.0464 82.5859M100.503 192.586L136.503 147.586C136.619 147.404 136.489 147.165 136.272 147.165M24.5028 147.165L136.272 147.165M136.272 147.165L100.503 102.086", stroke: color, strokeWidth, "stroke-linecap": "round" }) });
+};
+
+// src/custom/ZGalleryIcon.tsx
+import Svg4, { Path as Path4, Rect } from "react-native-svg";
+import { jsx as jsx5, jsxs as jsxs2 } from "react/jsx-runtime";
+var ZGalleryIcon = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  return /* @__PURE__ */ jsxs2(Svg4, { width: size, height: size, viewBox: "0 0 256 256", fill: "none", children: [
+    /* @__PURE__ */ jsx5(Rect, { x: "84.1997", y: "41", width: "137.999", height: "137.999", rx: "9", stroke: color, strokeWidth }),
+    /* @__PURE__ */ jsx5(Path4, { d: "M55.5999 80.3984L42.0155 82.2342C33.1964 83.4259 27.0445 91.5848 28.3246 100.391L43.7674 206.638C45.0112 215.196 52.8292 221.216 61.4205 220.233L178.799 206.798", stroke: color, strokeWidth, "stroke-linecap": "round" })
+  ] });
 };
 
 // src/react-native.tsx
 var customIcons = {
-  MyCustomIcon,
-  MoveInIcon,
-  MoveOutIcon,
-  ZCarpetCleaningIcon
+  ZCarpetCleaningIcon,
+  ZMoveOutIcon,
+  ZMoveInIcon,
+  ZGalleryIcon
 };
 var { IconContext, ...phosphorNativeIcons } = PhosphorNative;
 var iconPack = {

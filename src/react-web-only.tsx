@@ -3,215 +3,7 @@ import * as Phosphor from "phosphor-react";
 import type { IconProps } from "./types";
 import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
 
-// Custom icon implementado solo para web (sin react-native-svg)
-const MyCustomIconWeb: React.FC<IconProps> = ({
-  size = 24,
-  color = "currentColor",
-  weight = "regular"
-}) => {
-  const strokeWidth =
-    weight === "thin" ? 8 :
-      weight === "light" ? 12 :
-        weight === "bold" ? 24 :
-          16; // default regular
 
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 256 256"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Ejemplo: un arbolito genérico */}
-      <path
-        d="M128 24L56 152h144L128 24z"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      <path
-        d="M128 152v80"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        fill="none"
-      />
-    </svg>
-  );
-};
-
-
-
-// MoveIn icon for web
-const MoveInIconWeb: React.FC<IconProps> = ({
-  size = 24,
-  color = "currentColor",
-  weight = "regular"
-}) => {
-  const strokeWidth =
-    weight === "thin" ? 8 :
-      weight === "light" ? 12 :
-        weight === "bold" ? 24 :
-          16; // default regular
-
-  if (weight === "fill") {
-    return (
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 256 256"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g clipPath="url(#clip0_1_24)">
-          <path
-            d="M42.34 114.34L122.34 34.34C123.083 33.5962 123.965 33.0061 124.936 32.6035C125.908 32.2009 126.949 31.9937 128 31.9937C129.051 31.9937 130.092 32.2009 131.064 32.6035C132.035 33.0061 132.917 33.5962 133.66 34.34L213.66 114.34C214.403 115.084 214.992 115.966 215.393 116.937C215.795 117.908 216.001 118.949 216 120V216H40L40 192"
-            fill={color}
-          />
-          <path
-            d="M40 150L171 150"
-            fill={color}
-          />
-          <path
-            d="M139 182L171 149.5L139 117"
-            fill={color}
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_1_24">
-            <rect width="256" height="256" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 256 256"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clipPath="url(#clip0_1_24)">
-        <path
-          d="M42.34 114.34L122.34 34.34C123.083 33.5962 123.965 33.0061 124.936 32.6035C125.908 32.2009 126.949 31.9937 128 31.9937C129.051 31.9937 130.092 32.2009 131.064 32.6035C132.035 33.0061 132.917 33.5962 133.66 34.34L213.66 114.34C214.403 115.084 214.992 115.966 215.393 116.937C215.795 117.908 216.001 118.949 216 120V216H40L40 192"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M40 150L171 150"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M139 182L171 149.5L139 117"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_1_2">
-          <rect width="256" height="256" fill="white" />
-        </clipPath>
-      </defs>
-    </svg>
-  );
-};
-
-// MoveOut icon for web
-const MoveOutIconWeb: React.FC<IconProps> = ({
-  size = 24,
-  color = "currentColor",
-  weight = "regular"
-}) => {
-  const strokeWidth =
-    weight === "thin" ? 8 :
-      weight === "light" ? 12 :
-        weight === "bold" ? 24 :
-          16; // default regular
-
-  if (weight === "fill") {
-    return (
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 256 256"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g clipPath="url(#clip0_3_35)">
-          <path
-            d="M213.66 114.34L133.66 34.34C132.917 33.5962 132.035 33.0061 131.064 32.6035C130.092 32.2009 129.051 31.9937 128 31.9937C126.949 31.9937 125.908 32.2009 124.936 32.6035C123.965 33.0061 123.083 33.5962 122.34 34.34L42.34 114.34C41.5973 115.084 41.0084 115.966 40.6069 116.937C40.2054 117.908 39.9992 118.949 40 120V216H216L216 192"
-            fill={color}
-          />
-          <path
-            d="M67 150L198 150"
-            fill={color}
-          />
-          <path
-            d="M166 182L198 149.5L166 117"
-            fill={color}
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_3_35">
-            <rect width="256" height="256" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 256 256"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clipPath="url(#clip0_3_35)">
-        <path
-          d="M213.66 114.34L133.66 34.34C132.917 33.5962 132.035 33.0061 131.064 32.6035C130.092 32.2009 129.051 31.9937 128 31.9937C126.949 31.9937 125.908 32.2009 124.936 32.6035C123.965 33.0061 123.083 33.5962 122.34 34.34L42.34 114.34C41.5973 115.084 41.0084 115.966 40.6069 116.937C40.2054 117.908 39.9992 118.949 40 120V216H216L216 192"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M67 150L198 150"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M166 182L198 149.5L166 117"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_1_12">
-          <rect width="256" height="256" fill="white" />
-        </clipPath>
-      </defs>
-    </svg>
-  );
-};
 // ZCarpetCleaningIcon icon for web
 const ZCarpetCleaningIconWeb: React.FC<IconProps> = ({
   size = 24,
@@ -224,12 +16,11 @@ const ZCarpetCleaningIconWeb: React.FC<IconProps> = ({
         weight === "bold" ? 24 :
           16; // default regular
 
-
   return (
-    <svg width={size} height={size} viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="61.2807" cy="175.843" r="42.7807" stroke={color} strokeWidth={strokeWidth} />
-      <path d="M31.105 142V104.422C31.105 103.87 31.5527 103.422 32.105 103.422H121.631C145.677 103.422 193.674 124.978 194.05 211.033C194.053 211.585 193.605 212.053 193.052 212.053H89" stroke={color} strokeWidth={strokeWidth} />
-      <path d="M157.842 115.491V33C157.842 31.8954 158.737 31 159.842 31H228.263C229.367 31 230.263 31.8954 230.263 33V212.053M230.263 212.053H218.193M230.263 212.053H242.333" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" />
+    <svg width={size} height={size} viewBox="0 0 256 256" fill="none">
+      <circle cx="61.2807" cy="175.843" r="41.7807" stroke={color} strokeWidth={strokeWidth}/>
+      <path d="M31.105 145.5L31.105 112.422C31.105 107.451 35.1344 103.422 40.105 103.422H121.631C145.487 103.422 192.918 124.639 194.032 209.009C194.054 210.666 192.709 212.053 191.052 212.053H82.5" stroke={color} strokeWidth={strokeWidth}/>
+      <path d="M157.842 115.491V33C157.842 31.8954 158.737 31 159.842 31H228.263C229.367 31 230.263 31.8954 230.263 33V212.053M230.263 212.053H218.193M230.263 212.053H242.333" stroke={color} strokeWidth={strokeWidth} stroke-linecap="round"/>
     </svg>
   );
 
@@ -249,19 +40,60 @@ const ZMoveOutIconWeb: React.FC<IconProps> = ({
 
   return (
     <svg width={size} height={size} viewBox="0 0 256 256" fill="none">
-      <path d="M152.359 28.5185L232.359 108.519C233.852 110 235.036 111.764 235.841 113.708C236.646 115.651 237.057 117.735 237.049 119.839V215.839C237.049 217.96 236.207 219.995 234.706 221.495C233.206 222.996 231.171 223.839 229.049 223.839H53.0494C50.9277 223.839 48.8929 222.996 47.3926 221.495C45.8923 219.995 45.0494 217.96 45.0494 215.839V208.839C45.0494 208.286 45.4971 207.839 46.0494 207.839H61.0494H141.049H221.049V119.839L141.049 39.8385L82.5424 90.5484C82.1458 90.8921 81.551 90.8708 81.1801 90.4995L71.2872 80.5979C70.8771 80.1875 70.9013 79.5154 71.3397 79.1354L129.739 28.5185C132.74 25.5202 136.808 23.8359 141.049 23.8359C145.291 23.8359 149.359 25.5202 152.359 28.5185Z" fill="#212121"/>
-      <path d="M79.4424 100.5C81.1286 100.5 82.7515 101.157 83.9521 102.336L127.949 145.533C128.544 146.117 129.019 146.811 129.343 147.578C129.667 148.345 129.833 149.168 129.833 150C129.833 150.832 129.667 151.655 129.343 152.422C129.019 153.188 128.545 153.883 127.95 154.467L127.949 154.466L83.9521 197.664C82.7515 198.843 81.1286 199.5 79.4424 199.5C77.7562 199.5 76.1333 198.843 74.9326 197.664C73.731 196.484 73.0508 194.878 73.0508 193.197C73.0509 191.517 73.7311 189.911 74.9326 188.731L107.972 156.3H15.8887C14.2031 156.3 12.581 155.642 11.3809 154.464C10.18 153.285 9.5 151.68 9.5 150C9.5 148.32 10.18 146.715 11.3809 145.536C12.581 144.358 14.2031 143.7 15.8887 143.7H107.972L74.9326 111.269C73.7311 110.089 73.0509 108.483 73.0508 106.803C73.0508 105.122 73.731 103.516 74.9326 102.336C76.1333 101.157 77.7562 100.5 79.4424 100.5Z" fill="#212121" stroke={color} strokeWidth={strokeWidth}/>
+      <path d="M202.5 217.5H43.5C41.2909 217.5 39.5 215.709 39.5 213.5V118.657C39.5 117.596 39.9214 116.579 40.6716 115.828L123.907 32.5931C125.374 31.126 127.719 31.0242 129.308 32.3588L189 82.5M202.5 102L238.5 147C238.617 147.182 238.486 147.421 238.27 147.421M126.5 147.421H238.27M238.27 147.421L202.5 192.5" stroke={color} strokeWidth={strokeWidth} stroke-linecap="round"/>
+    </svg>
+  );
+
+};
+
+// ZMoveInIcon icon for web
+const ZMoveInIconWeb: React.FC<IconProps> = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth =
+    weight === "thin" ? 8 :
+      weight === "light" ? 12 :
+        weight === "bold" ? 24 :
+          16; // default regular
+
+
+  return (
+    <svg width={size} height={size} viewBox="0 0 256 256" fill="none">
+        <path d="M60.5464 217.586H219.546C221.756 217.586 223.546 215.795 223.546 213.586V118.743C223.546 117.682 223.125 116.665 222.375 115.914L139.14 32.6791C137.672 31.212 135.327 31.1102 133.738 32.4447L74.0464 82.5859M100.503 192.586L136.503 147.586C136.619 147.404 136.489 147.165 136.272 147.165M24.5028 147.165L136.272 147.165M136.272 147.165L100.503 102.086" stroke={color} strokeWidth={strokeWidth} stroke-linecap="round"/>
+    </svg>
+  );
+
+};
+
+// ZGalleryIcon icon for web
+const ZGalleryIconWeb: React.FC<IconProps> = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth =
+    weight === "thin" ? 8 :
+      weight === "light" ? 12 :
+        weight === "bold" ? 24 :
+          16; // default regular
+
+
+  return (
+    <svg width={size} height={size} viewBox="0 0 256 256" fill="none">
+      <rect x="84.1997" y="41" width="137.999" height="137.999" rx="9" stroke={color} strokeWidth={strokeWidth}/>
+      <path d="M55.5999 80.3984L42.0155 82.2342C33.1964 83.4259 27.0445 91.5848 28.3246 100.391L43.7674 206.638C45.0112 215.196 52.8292 221.216 61.4205 220.233L178.799 206.798" stroke={color} strokeWidth={strokeWidth} stroke-linecap="round"/>
     </svg>
   );
 
 };
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
-  MyCustomIcon: MyCustomIconWeb,
-  MoveInIcon: MoveInIconWeb,
-  MoveOutIcon: MoveOutIconWeb,
   ZCarpetCleaningIcon: ZCarpetCleaningIconWeb,
-  ZMoveOutIcon: ZMoveOutIconWeb
+  ZMoveOutIcon: ZMoveOutIconWeb,
+  ZMoveInIcon: ZMoveInIconWeb,
+  ZGalleryIcon: ZGalleryIconWeb
 };
 
 

@@ -34,10 +34,10 @@ const customIcons: Record<string, React.ComponentType<IconProps>> = {
 // Filtrar solo los componentes de iconos, excluyendo IconContext
 const { IconContext, ...phosphorNativeIcons } = PhosphorNative;
 
-const iconPack: IconPackType = {
+const iconPack = {
   ...phosphorNativeIcons,
   ...customIcons
-};
+} as unknown as IconPackType;
 
 export const Icon = createIconComponent(iconPack);
 export type { IconProps } from "./types";

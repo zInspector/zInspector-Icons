@@ -3,7 +3,7 @@
  * Este script convierte todos los componentes de iconos a SVG strings
  */
 
-import * as Phosphor from "phosphor-react";
+import * as Phosphor from "@phosphor-icons/react";
 import { MyCustomIcon } from "./custom/MyCustomIcon";
 import { ZCarpetCleaningIcon } from "./custom/ZCarpetCleaningIcon";
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -66,7 +66,7 @@ export function generateAllSvgs(): Record<string, string> {
   const svgs: Record<string, string> = {};
 
   Object.entries(allIcons).forEach(([name, Component]) => {
-    const svg = componentToSvg(Component, name);
+    const svg = componentToSvg(Component as React.ComponentType<any>, name);
     if (svg) {
       svgs[name] = svg;
     }

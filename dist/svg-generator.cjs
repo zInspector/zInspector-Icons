@@ -34,7 +34,7 @@ __export(svg_generator_exports, {
   generateSvgFileContent: () => generateSvgFileContent
 });
 module.exports = __toCommonJS(svg_generator_exports);
-var Phosphor = __toESM(require("phosphor-react"), 1);
+var Phosphor = __toESM(require("@phosphor-icons/react"), 1);
 
 // src/custom/MyCustomIcon.tsx
 var import_react_native_svg = __toESM(require("react-native-svg"), 1);

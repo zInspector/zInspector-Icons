@@ -1,5 +1,5 @@
 import React from "react";
-import * as Phosphor from "phosphor-react";
+import * as Phosphor from "@phosphor-icons/react";
 import type { IconProps } from "./types";
 import { createIconComponent, IconPack as IconPackType } from "./IconFactory";
 
@@ -34,10 +34,10 @@ const customIcons: Record<string, React.ComponentType<IconProps>> = {
 // Filtrar solo los componentes de iconos, excluyendo IconContext
 const { IconContext, ...phosphorIcons } = Phosphor;
 
-const iconPack: IconPackType = {
+const iconPack = {
   ...phosphorIcons,
   ...customIcons
-};
+} as unknown as IconPackType;
 
 export const Icon = createIconComponent(iconPack);
 export type { IconProps } from "./types";

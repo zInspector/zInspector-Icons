@@ -1,5 +1,5 @@
 // src/svg-generator.ts
-import * as Phosphor from "phosphor-react";
+import * as Phosphor from "@phosphor-icons/react";
 
 // src/custom/MyCustomIcon.tsx
 import Svg, { Path } from "react-native-svg";

@@ -15,6 +15,7 @@ import { ZTenantInspectionIcon } from "./custom/ZTenantInspectionIcon";
 import { ZPreInspectionIcon } from "./custom/ZPreInspectionIcon";
 import { ZFencingIcon } from "./custom/ZFencingIcon";
 import { ZMagicWandIcon } from "./custom/ZMagicWandIcon";
+import { ZAssistantLoadingIcon } from "./custom/ZAssistantLoading";
 
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
@@ -28,7 +29,8 @@ const customIcons: Record<string, React.ComponentType<IconProps>> = {
   ZTenantInspectionIcon,
   ZPreInspectionIcon,
   ZFencingIcon,
-  ZMagicWandIcon
+  ZMagicWandIcon,
+  ZAssistantLoadingIcon
 };
 
 // Filtrar solo los componentes de iconos, excluyendo IconContext

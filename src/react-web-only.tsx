@@ -254,6 +254,27 @@ const ZMagicWandIconWeb: React.FC<IconProps> = ({
   );
 
 };
+// ZAssistantLoadingIcon icon for web
+const ZAssistantLoadingIconWeb: React.FC<IconProps> = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth =
+    weight === "thin" ? 8 :
+      weight === "light" ? 12 :
+        weight === "bold" ? 24 :
+          16; // default regular
+
+
+  return (
+    <svg width={size} height={size}  viewBox="0 0 256 256" fill="none">
+      <path d="M168,40.7a96,96,0,1,1-80,0" fill="none" stroke={color} stroke-linecap="round" stroke-linejoin="round" strokeWidth={strokeWidth}/>            
+      <path d="M128,80 Q128,128 176,128 Q128,128 128,176 Q128,128 80,128 Q128,128 128,80 Z" fill="none" stroke={color} stroke-linecap="round" stroke-linejoin="round" strokeWidth={strokeWidth}/>
+    </svg>
+  );
+
+};
 
 const customIcons: Record<string, React.ComponentType<IconProps>> = {
   ZCarpetCleaningIcon: ZCarpetCleaningIconWeb,
@@ -266,7 +287,8 @@ const customIcons: Record<string, React.ComponentType<IconProps>> = {
   ZTenantInspectionIcon: ZTenantInspectionIconWeb,
   ZPreInspectionIcon: ZPreInspectionIconWeb,
   ZFencingIcon: ZFencingIconWeb,
-  ZMagicWandIcon: ZMagicWandIconWeb
+  ZMagicWandIcon: ZMagicWandIconWeb,
+  ZAssistantLoadingIcon: ZAssistantLoadingIconWeb
 };
 
 

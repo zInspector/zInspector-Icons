@@ -234,6 +234,21 @@ var ZMagicWandIcon = ({
   ] });
 };
 
+// src/custom/ZAssistantLoading.tsx
+var import_react_native_svg12 = __toESM(require("react-native-svg"), 1);
+var import_jsx_runtime13 = require("react/jsx-runtime");
+var ZAssistantLoadingIcon = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  return /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(import_react_native_svg12.default, { width: size, height: size, viewBox: "0 0 256 256", fill: "none", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_react_native_svg12.Path, { d: "M168,40.7a96,96,0,1,1-80,0", fill: "none", stroke: color, "stroke-linecap": "round", "stroke-linejoin": "round", strokeWidth }),
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_react_native_svg12.Path, { d: "M128,80 Q128,128 176,128 Q128,128 128,176 Q128,128 80,128 Q128,128 128,80 Z", fill: "none", stroke: color, "stroke-linecap": "round", "stroke-linejoin": "round", strokeWidth })
+  ] });
+};
+
 // src/react-native.tsx
 var customIcons = {
   ZCarpetCleaningIcon,
@@ -246,7 +261,8 @@ var customIcons = {
   ZTenantInspectionIcon,
   ZPreInspectionIcon,
   ZFencingIcon,
-  ZMagicWandIcon
+  ZMagicWandIcon,
+  ZAssistantLoadingIcon
 };
 var { IconContext, ...phosphorNativeIcons } = PhosphorNative;
 var iconPack = {

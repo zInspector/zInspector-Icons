@@ -157,6 +157,17 @@ var ZMagicWandIconWeb = ({
     /* @__PURE__ */ jsx2("path", { d: "M39.1382 180.007L136.719 82.4266L172.781 118.489L75.2006 216.07C72.8574 218.413 69.0585 218.413 66.7153 216.07L39.1381 188.493C36.795 186.149 36.795 182.351 39.1382 180.007Z", stroke: color, strokeWidth, fill: "none" })
   ] });
 };
+var ZAssistantLoadingIconWeb = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  return /* @__PURE__ */ jsxs("svg", { width: size, height: size, viewBox: "0 0 256 256", fill: "none", children: [
+    /* @__PURE__ */ jsx2("path", { d: "M168,40.7a96,96,0,1,1-80,0", fill: "none", stroke: color, "stroke-linecap": "round", "stroke-linejoin": "round", strokeWidth }),
+    /* @__PURE__ */ jsx2("path", { d: "M128,80 Q128,128 176,128 Q128,128 128,176 Q128,128 80,128 Q128,128 128,80 Z", fill: "none", stroke: color, "stroke-linecap": "round", "stroke-linejoin": "round", strokeWidth })
+  ] });
+};
 var customIcons = {
   ZCarpetCleaningIcon: ZCarpetCleaningIconWeb,
   ZMoveOutIcon: ZMoveOutIconWeb,
@@ -168,7 +179,8 @@ var customIcons = {
   ZTenantInspectionIcon: ZTenantInspectionIconWeb,
   ZPreInspectionIcon: ZPreInspectionIconWeb,
   ZFencingIcon: ZFencingIconWeb,
-  ZMagicWandIcon: ZMagicWandIconWeb
+  ZMagicWandIcon: ZMagicWandIconWeb,
+  ZAssistantLoadingIcon: ZAssistantLoadingIconWeb
 };
 var { IconContext, ...phosphorIcons } = Phosphor;
 var iconPack = {

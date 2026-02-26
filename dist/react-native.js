@@ -199,6 +199,21 @@ var ZMagicWandIcon = ({
   ] });
 };
 
+// src/custom/ZAssistantLoading.tsx
+import Svg12, { Path as Path12 } from "react-native-svg";
+import { jsx as jsx13, jsxs as jsxs10 } from "react/jsx-runtime";
+var ZAssistantLoadingIcon = ({
+  size = 24,
+  color = "currentColor",
+  weight = "regular"
+}) => {
+  const strokeWidth = weight === "thin" ? 8 : weight === "light" ? 12 : weight === "bold" ? 24 : 16;
+  return /* @__PURE__ */ jsxs10(Svg12, { width: size, height: size, viewBox: "0 0 256 256", fill: "none", children: [
+    /* @__PURE__ */ jsx13(Path12, { d: "M168,40.7a96,96,0,1,1-80,0", fill: "none", stroke: color, "stroke-linecap": "round", "stroke-linejoin": "round", strokeWidth }),
+    /* @__PURE__ */ jsx13(Path12, { d: "M128,80 Q128,128 176,128 Q128,128 128,176 Q128,128 80,128 Q128,128 128,80 Z", fill: "none", stroke: color, "stroke-linecap": "round", "stroke-linejoin": "round", strokeWidth })
+  ] });
+};
+
 // src/react-native.tsx
 var customIcons = {
   ZCarpetCleaningIcon,
@@ -211,7 +226,8 @@ var customIcons = {
   ZTenantInspectionIcon,
   ZPreInspectionIcon,
   ZFencingIcon,
-  ZMagicWandIcon
+  ZMagicWandIcon,
+  ZAssistantLoadingIcon
 };
 var { IconContext, ...phosphorNativeIcons } = PhosphorNative;
 var iconPack = {

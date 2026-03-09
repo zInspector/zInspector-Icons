@@ -15,8 +15,8 @@ export const ZAssistantLoadingIcon: React.FC<IconProps> = ({
 
     return (
         <Svg width={size} height={size}  viewBox="0 0 256 256" fill="none">
-            <Path d="M168,40.7a96,96,0,1,1-80,0" fill="none" stroke={color} stroke-linecap="round" stroke-linejoin="round" strokeWidth={strokeWidth}/>            
-            <Path d="M128,80 Q128,128 176,128 Q128,128 128,176 Q128,128 80,128 Q128,128 128,80 Z" fill="none" stroke={color} stroke-linecap="round" stroke-linejoin="round" strokeWidth={strokeWidth}/>
+            <Path d="M168,40.7a96,96,0,1,1-80,0" fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth={strokeWidth}/>            
+            <Path d="M128,80 Q128,128 176,128 Q128,128 128,176 Q128,128 80,128 Q128,128 128,80 Z" fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth={strokeWidth}/>
         </Svg>
     );
 };

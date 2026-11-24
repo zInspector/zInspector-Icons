@@ -1,5 +1,5 @@
-import { I as IconPack, a as IconWrapperProps } from './IconFactory-tPWVp8Gz.js';
-export { b as IconProps } from './IconFactory-tPWVp8Gz.js';
+import { I as IconPack, a as IconWrapperProps } from './IconFactory-MorHSVwD.js';
+export { b as IconProps } from './IconFactory-MorHSVwD.js';
 import React from 'react';
 
 declare const iconPack: IconPack;

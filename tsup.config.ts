@@ -3,6 +3,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   entry: {
     "react-web-only": "src/react-web-only.tsx",
+    "custom-web": "src/custom-web.tsx",
     "react-web": "src/react-web.tsx", 
     "react-native": "src/react-native.tsx",
     "svg-enhanced": "src/svg-enhanced.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@zinspector/icons",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "type": "module",
   "description": "Shared icon library (Phosphor + custom) for web, React Native and raw SVG usage",
   "repository": {
@@ -39,6 +39,16 @@
       "types": "./dist/react-web-only.d.ts",
       "import": "./dist/react-web-only.js",
       "require": "./dist/react-web-only.cjs"
+    },
+    "./custom-web": {
+      "import": {
+        "types": "./dist/custom-web.d.ts",
+        "default": "./dist/custom-web.js"
+      },
+      "require": {
+        "types": "./dist/custom-web.d.cts",
+        "default": "./dist/custom-web.cjs"
+      }
     },
     "./svg-enhanced": {
       "types": "./dist/svg-enhanced.d.ts",

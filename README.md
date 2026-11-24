@@ -372,6 +372,23 @@ import { Icon } from "zInspector-Icons/react-web-only";
 <Icon name="MyCustomIcon" size={24} color="#007bff" />
 ```
 
+### Custom Icons Only (No Phosphor)
+`react-web-only` bundles the whole Phosphor set, because `Icon` looks icons up by name.
+When a page needs only the zInspector custom icons, or you want to build a smaller pack
+of your own, use the `custom-web` entry. It does not import or bundle Phosphor:
+
+```tsx
+import { customIcons, createIconComponent } from "zinspector-icons/custom-web";
+
+// Render one directly
+const ZBuildingIcon = customIcons.ZBuildingIcon;
+<ZBuildingIcon size={24} color="currentColor" />
+
+// Or build an Icon that knows only the icons you pass in
+const Icon = createIconComponent({ ...customIcons /*, House, CaretDown, ... */ });
+<Icon name="ZBuildingIcon" size={24} color="currentColor" />
+```
+
 ### Simple Usage Examples
 
 ```tsx
@@ -514,10 +531,11 @@ const customIcons: Record<string, React.ComponentType<IconProps>> = {
 
 #### 4. Create Web-Only Version (Optional)
 
-If you need a web-only version with pure HTML SVG, add to `src/react-web-only.tsx`:
+If you need a web-only version with pure HTML SVG, add it to `src/custom-web.tsx` and to the
+`customIcons` map in that file. `react-web-only` and `custom-web` both pick it up from there:
 
 ```tsx
-// Add to src/react-web-only.tsx
+// Add to src/custom-web.tsx
 const MoveInIconWeb: React.FC<IconProps> = ({
   size = 24,
   color = "currentColor",
@@ -757,6 +775,9 @@ dist/
 ├── react-web-only.js
 ├── react-web-only.cjs
 ├── react-web-only.d.ts
+├── custom-web.js
+├── custom-web.cjs
+├── custom-web.d.ts
 └── ... (other modules + source maps)
 ```
 
@@ -784,7 +805,8 @@ dist/
 src/
 ├── react-native.tsx    # React Native exports (uses react-native-svg)
 ├── react-web.tsx       # Web Dashboard exports (uses phosphor-react)
-├── react-web-only.tsx  # Web-only pure SVG exports
+├── react-web-only.tsx  # Web-only pure SVG exports (Phosphor + custom)
+├── custom-web.tsx      # Web-only custom icons and the Icon factory, no Phosphor
 ├── svg.ts             # Raw SVG string exports
 ├── types.ts           # TypeScript interfaces
 ├── IconFactory.tsx    # Icon component factory
@@ -830,12 +852,14 @@ src/
 - `zInspector-Icons/react-native` - For React Native apps
 - `zInspector-Icons/react-web` - For web dashboard (default)
 - `zInspector-Icons/react-web-only` - For web-only pure SVG
+- `@zinspector/icons/custom-web` - Custom icons only; does not import or bundle Phosphor
 - `zInspector-Icons/svg` - For raw SVG strings
 
 ### With yarn
 - `zinspector-icons/react-native` - For React Native apps
 - `zinspector-icons/react-web` - For web dashboard (default)
 - `zinspector-icons/react-web-only` - For web-only pure SVG
+- `zinspector-icons/custom-web` - Custom icons only; does not import or bundle Phosphor
 - `zinspector-icons/svg` - For raw SVG strings
 
 ## Repository

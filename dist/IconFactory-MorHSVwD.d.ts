@@ -13,5 +13,6 @@ interface IconWrapperProps extends IconProps {
     /** Unique icon name (e.g. "House", "MyCustomIcon") */
     name: string;
 }
+declare function createIconComponent(iconPack: IconPack): React.FC<IconWrapperProps>;
 
-export type { IconPack as I, IconWrapperProps as a, IconProps as b };
+export { type IconPack as I, type IconWrapperProps as a, type IconProps as b, createIconComponent as c, type IconComponent as d, type IconWeight as e };

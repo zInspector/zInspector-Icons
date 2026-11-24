@@ -22,7 +22,7 @@ function createIconComponent(iconPack2) {
   return Icon2;
 }
 
-// src/react-web-only.tsx
+// src/custom-web.tsx
 import { jsx as jsx2, jsxs } from "react/jsx-runtime";
 var ZCarpetCleaningIconWeb = ({
   size = 24,
@@ -182,6 +182,8 @@ var customIcons = {
   ZMagicWandIcon: ZMagicWandIconWeb,
   ZAssistantLoadingIcon: ZAssistantLoadingIconWeb
 };
+
+// src/react-web-only.tsx
 var { IconContext, ...phosphorIcons } = Phosphor;
 var iconPack = {
   ...phosphorIcons,
